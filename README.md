@@ -48,7 +48,7 @@ components/
     Hero.tsx
     Stack.tsx
     Experience.tsx
-    Projects.tsx      # EasyModel ML 4-node ring + hackathon
+    Projects.tsx      # flagship projects (hackathon, ...)
     Influence.tsx     # waveform + radar + events
     Manifesto.tsx     # contact API + manifesto
 ```

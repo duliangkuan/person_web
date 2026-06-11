@@ -8,7 +8,7 @@ const LINES = [
   '[00:00.012] POST: CPU cortex integrity ............ [ OK ]',
   '[00:00.024] POST: Neural lattice mount /dev/brain .. [ OK ]',
   '[00:00.041] INIT: Agent runtime (OpenClaw)  ........ [ LINKED ]',
-  '[00:00.058] INIT: Commercial subsystem EasyModel ... [ ONLINE ]',
+  '[00:00.058] INIT: Commercial subsystem solo_ops .... [ ONLINE ]',
   '[00:00.076] LOAD: sigils/vibe_coding.sig ........... [ VERIFIED ]',
   '[00:00.094] LOAD: memory/xiaohongshu.mem ........... [ 170k fans mounted ]',
   '[00:00.112] LOAD: personas/architect.persona ....... [ 杜亮宽 / Du Fengyun ]',

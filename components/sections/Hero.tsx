@@ -12,7 +12,7 @@ const IDENT_LINES: CRTLine[] = [
   { key: 'CALLSIGN',        value: 'VIBE_ARCHITECT',                               tint: 'retina' },
   { key: 'STATUS',          value: 'Lvl 20 / STDU_NODE / NEURAL_NETWORK_BUILDER',  tint: 'bone' },
   { key: 'BASE_NODE',       value: 'BEIJING_GRID',                                 tint: 'retina', badge: 'ONLINE & SYNCED', badgeTint: 'electro' },
-  { key: 'CURRENT_TASK',    value: 'SCALING_EASYMODEL_ML / OPENCLAW_OPTIMIZATION', tint: 'retina' },
+  { key: 'CURRENT_TASK',    value: 'OPENCLAW_OPTIMIZATION / AGENT_OPS',            tint: 'retina' },
   { key: 'COMMITS',         value: '804 this quarter',                             tint: 'bone' },
   { key: 'AGENTS_DEPLOYED', value: 'OpenClaw · Hermes · Coze',                     tint: 'retina' },
   { key: 'WEAPONRY',        value: 'Cursor · ClaudeCode · Vibe_Coding',            tint: 'electro' },
@@ -107,7 +107,6 @@ export default function Hero() {
           >
             {[
               'OpenClaw_Contributor',
-              'EasyModel_ML',
               'RAG',
               'Agent_Ops',
               'Vibe_Coding',

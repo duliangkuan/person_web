@@ -1,143 +1,7 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { motion } from 'framer-motion';
 import SectionHeading from '../SectionHeading';
-
-const LOOPS = [
-  {
-    id: 'value',
-    label: '价值闭环',
-    short: 'VALUE',
-    detail: '锚定特殊数据与数据主权痛点 — 为垂直行业提供模型私有化与分润确权。',
-    tag: '01',
-  },
-  {
-    id: 'user',
-    label: '用户闭环',
-    short: 'USER',
-    detail: '搭建近 200 人种子用户群；形成「使用 → 训练 → 上架 → 分润」飞轮。',
-    tag: '02',
-  },
-  {
-    id: 'commerce',
-    label: '商业闭环',
-    short: 'COMMERCE',
-    detail: '定制化服务验证 + SaaS 订阅 + 模型分润，混合收入结构，抗周期。',
-    tag: '03',
-  },
-  {
-    id: 'land',
-    label: '落地闭环',
-    short: 'LANDING',
-    detail: '清华实验室 → 香港保诚保险 → 规模化推广 — 从 lab 级 POC 到企业级部署。',
-    tag: '04',
-  },
-] as const;
-
-type LoopId = typeof LOOPS[number]['id'];
-
-function EasyRing() {
-  const [active, setActive] = useState<LoopId>('value');
-  const radius = 150;
-
-  return (
-    <div className="relative mx-auto flex items-center justify-center h-[360px] md:h-[440px] w-full">
-      {/* rotating dashed ring */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
-        className="absolute h-[320px] w-[320px] md:h-[400px] md:w-[400px] rounded-full border border-dashed border-retina/25"
-      />
-      <motion.div
-        animate={{ rotate: -360 }}
-        transition={{ duration: 90, repeat: Infinity, ease: 'linear' }}
-        className="absolute h-[260px] w-[260px] md:h-[340px] md:w-[340px] rounded-full border border-dashed border-electro/20"
-      />
-
-      {/* connector lines */}
-      <svg className="absolute h-[360px] w-[360px] md:h-[440px] md:w-[440px]" viewBox="-200 -200 400 400">
-        <defs>
-          <radialGradient id="ringGlow" cx="0" cy="0" r="0.6">
-            <stop offset="0%" stopColor="#00FF41" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#7024FF" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-        <circle r="60" fill="url(#ringGlow)" />
-        {LOOPS.map((_, i) => {
-          const a = (i / LOOPS.length) * Math.PI * 2 - Math.PI / 2;
-          const x = Math.cos(a) * radius;
-          const y = Math.sin(a) * radius;
-          return (
-            <line
-              key={i}
-              x1={0}
-              y1={0}
-              x2={x}
-              y2={y}
-              stroke="rgba(0,255,65,0.25)"
-              strokeDasharray="3 4"
-            />
-          );
-        })}
-      </svg>
-
-      {/* center core */}
-      <div className="absolute z-10 flex flex-col items-center justify-center">
-        <div className="font-mono text-[10px] uppercase tracking-[0.4em] text-retina/80">core</div>
-        <div className="mt-1 font-hans font-black text-lg md:text-xl text-bone glow-retina">EasyModel ML</div>
-        <div className="mt-1 font-mono text-[10px] text-bone/40">v0.9-alpha · ring</div>
-      </div>
-
-      {/* nodes */}
-      {LOOPS.map((l, i) => {
-        const a = (i / LOOPS.length) * Math.PI * 2 - Math.PI / 2;
-        const x = Math.cos(a) * radius;
-        const y = Math.sin(a) * radius;
-        const isActive = active === l.id;
-        return (
-          <button
-            key={l.id}
-            onClick={() => setActive(l.id)}
-            className="absolute group"
-            style={{ transform: `translate(${x}px, ${y}px)` }}
-          >
-            <motion.div
-              animate={{ scale: isActive ? 1.15 : 1 }}
-              className={`h-12 w-12 md:h-16 md:w-16 grid place-items-center border text-[10px] md:text-xs font-mono ${
-                isActive
-                  ? 'bg-retina/10 border-retina text-retina shadow-retina'
-                  : 'border-retina/30 text-bone/80 hover:border-retina/80'
-              }`}
-            >
-              <div>
-                <div className="text-[9px] text-bone/50">[{l.tag}]</div>
-                <div className="font-black">{l.short}</div>
-              </div>
-            </motion.div>
-          </button>
-        );
-      })}
-
-      {/* Detail drawer */}
-      <div className="absolute bottom-[-20px] md:bottom-[-30px] left-1/2 -translate-x-1/2 w-full max-w-md px-4">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 10, filter: 'blur(6px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            exit={{ opacity: 0, y: -6, filter: 'blur(6px)' }}
-            transition={{ duration: 0.3 }}
-            className="glass p-3 font-mono text-[12px] text-bone/80"
-          >
-            <span className="text-retina">&gt; loop[{active}].describe() </span>
-            <span className="text-bone/90">{LOOPS.find((l) => l.id === active)?.detail}</span>
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    </div>
-  );
-}
 
 export default function Projects() {
   return (
@@ -149,46 +13,13 @@ export default function Projects() {
       />
 
       <div className="grid grid-cols-12 gap-6">
-        {/* EasyModel ML */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.7 }}
-          className="col-span-12 lg:col-span-7 glass chrome-edge p-6 md:p-8"
-        >
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[11px]">
-            <span className="text-electro tracking-[0.35em]">[EASYMODEL_ML]</span>
-            <span className="text-bone/40">2026.04.10 → RUNNING</span>
-            <span className="text-bone/30">·</span>
-            <span className="text-retina">产品 & 商业化负责人</span>
-          </div>
-          <h3 className="mt-2 font-hans text-3xl md:text-5xl font-black leading-[0.9] text-bone">
-            <span className="glitch" data-text="EasyModel ML">EasyModel ML</span>
-          </h3>
-          <p className="mt-3 font-mono text-[13px] text-bone/80 leading-relaxed">
-            面向垂直行业的 AI 模型自动化训练 SaaS —
-            <span className="text-retina"> 模型训练界的 ClaudeCode</span>。
-            支持自然语言交互、零代码垂类小模型训练与私有化部署。
-          </p>
-
-          <EasyRing />
-
-          <div className="mt-14 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 font-mono text-[11px]">
-            <Stat k="Seed Users" v="≈ 200" />
-            <Stat k="Flywheel" v="USE→TRAIN→LIST→$" />
-            <Stat k="Pilot" v="Tsinghua Lab" accent />
-            <Stat k="Scale-Up" v="HK Prudential" accent />
-          </div>
-        </motion.div>
-
         {/* Hackathon */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.7, delay: 0.08 }}
-          className="col-span-12 lg:col-span-5 glass-electro chrome-edge p-6 md:p-8 flex flex-col"
+          transition={{ duration: 0.7 }}
+          className="col-span-12 lg:col-span-7 glass-electro chrome-edge p-6 md:p-8 flex flex-col"
         >
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[11px]">
             <span className="text-retina tracking-[0.35em]">[XHS_HACKATHON_FINALE]</span>
@@ -219,6 +50,53 @@ export default function Projects() {
             <Stat k="Team" v="PhD × 少年班" />
             <Stat k="Demo" v="48h MVP" accent />
             <Stat k="Leads" v="20 corp / 170 u" accent />
+          </div>
+        </motion.div>
+
+        {/* fengyun-publish */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="col-span-12 lg:col-span-5 glass-electro chrome-edge p-6 md:p-8 flex flex-col"
+        >
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[11px]">
+            <span className="text-retina tracking-[0.35em]">[FENGYUN_PUBLISH]</span>
+            <span className="text-bone/40">OPEN SOURCE</span>
+            <span className="text-bone/30">·</span>
+            <span className="text-electro">24/7 运转中</span>
+          </div>
+          <h3 className="mt-2 font-hans text-3xl md:text-4xl font-black leading-[0.9] text-bone">
+            <span className="glitch" data-text="端到端 AI 内容流水线">端到端 AI 内容流水线</span>
+          </h3>
+          <p className="mt-3 font-mono text-[13px] text-bone/80 leading-relaxed">
+            自研 harness 架构多 Agent 系统：50+ 信源采集 → 数据驱动选题 → AI 写作 →
+            三轨 critic 评分门控 → 排版配图 → 每天 00:00 自动产出 2 篇。不过门，不发布。
+          </p>
+          <a
+            href="https://github.com/duliangkuan/fengyun-publish"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-4 block overflow-hidden border border-bone/10"
+          >
+            <div className="relative h-64 overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/fengyun-architecture.svg"
+                alt="fengyun-publish 系统架构图"
+                className="w-full object-cover object-top opacity-90 transition group-hover:opacity-100"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0f172a] to-transparent" />
+              <div className="absolute bottom-3 right-4 font-mono text-[11px] text-electro opacity-0 transition group-hover:opacity-100">
+                查看完整架构 → GitHub
+              </div>
+            </div>
+          </a>
+          <div className="mt-auto pt-6 grid grid-cols-3 gap-3 font-mono text-[11px]">
+            <Stat k="Sources" v="50+ 信源" />
+            <Stat k="Gate" v="3 轨 critic" accent />
+            <Stat k="Ship" v="2 篇 / 日" accent />
           </div>
         </motion.div>
       </div>

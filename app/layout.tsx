@@ -24,13 +24,12 @@ const noto = Noto_Sans_SC({
 export const metadata: Metadata = {
   title: "DU'S_VIBE_SPACE // Private Consciousness Terminal",
   description:
-    "AI Architect & Commercial Lead. OpenClaw contributor, Vibe Coding geek, EasyModel ML founder. Private digital consciousness terminal.",
+    "AI Architect & Commercial Lead. OpenClaw contributor, Vibe Coding geek. Private digital consciousness terminal.",
   keywords: [
     'Du Fengyun',
     '杜亮宽',
     'AI Architect',
     'OpenClaw',
-    'EasyModel ML',
     'Vibe Coding',
     'Portfolio',
   ],

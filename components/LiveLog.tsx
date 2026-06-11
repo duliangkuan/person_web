@@ -3,7 +3,7 @@
 /**
  * LiveLog — rolling "OPSLOG" terminal that fills the empty zone below the
  * telemetry grid. A weighted template pool synthesizes plausible logs from
- * Du Fengyun's actual stack (OpenClaw, EasyModel, Hermes, Coze, Dify, n8n,
+ * Du Fengyun's actual stack (OpenClaw, Hermes, Coze, Dify, n8n,
  * Cursor, Claude Code, Xiaohongshu). New lines append at 280–980ms and the
  * buffer is capped at 18 rows for performance.
  *
@@ -19,7 +19,7 @@ type Tpl = { build: (i: number) => string; level: Level; weight: number };
 
 const TEMPLATES: Tpl[] = [
   { level: 'info',     weight: 3, build: (i) => `agent.openclaw.skill("rag_retrieve") → dispatched ok` },
-  { level: 'commerce', weight: 3, build: (i) => `easymodel.train_job#${2100 + ((i * 7) % 900)} → queued` },
+  { level: 'commerce', weight: 3, build: (i) => `client.deliver(order#${2100 + ((i * 7) % 900)}) → shipped` },
   { level: 'neural',   weight: 2, build: (i) => `xhs.feed.engagement += ${30 + ((i * 13) % 220)}` },
   { level: 'ok',       weight: 2, build: (i) => `hermes.plan(step=${3 + (i % 9)}) → return_ok` },
   { level: 'commerce', weight: 2, build: ()  => `bitable.workflow.fire("保险_需求抽取→RAG→定价")` },

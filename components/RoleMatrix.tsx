@@ -17,7 +17,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const ROLES = [
   'VIBE_CODING 极客',
-  'EASYMODEL_ML 商业化负责人',
+  'AI 产品 & 商业化操盘手',
   'OPENCLAW 核心架构玩家',
   '小红书 AI 博主',
 ];
