@@ -17,6 +17,8 @@ const CHIPS: Chip[] = [
   { name: 'Vibe Coding', role: 'Cursor / ClaudeCode 高效交付模式', tag: 'ai', level: 96 },
   { name: 'Prompt Engineering', role: 'Gemini / GPT / Kimi 调优矩阵', tag: 'ai', level: 92 },
   { name: 'RAG & OCR Pipeline', role: 'TextIn / 全能扫描王 · 批量抽取系统', tag: 'ai', level: 86 },
+  { name: 'Agent Harness / Eval', role: 'LLM-as-Judge · Spearman 校准 · 偏见对冲条款', tag: 'ai', level: 93 },
+  { name: 'MCP & 向量检索', role: '自研 MCP server · Chroma 语义召回', tag: 'ai', level: 85 },
   // Low-code
   { name: 'Coze', role: '复杂智能体与工作流编排', tag: 'lowcode', level: 94 },
   { name: 'Dify', role: '生产级 Chatflow / Agent 部署', tag: 'lowcode', level: 90 },
@@ -24,6 +26,7 @@ const CHIPS: Chip[] = [
   { name: '飞书 Bitable', role: '多维表格 · 企业工作流中台', tag: 'lowcode', level: 92 },
   { name: 'Figma', role: '原型 / 设计交付 / 0→1 搭建', tag: 'lowcode', level: 80 },
   { name: 'NotebookLM', role: '知识库与上下文管理', tag: 'lowcode', level: 78 },
+  { name: 'Remotion', role: 'React 程序化视频 · 转场组件库参数化出片', tag: 'lowcode', level: 87 },
   // Commercial
   { name: '技术商业化', role: '底层技术 → 通俗落地方案', tag: 'commerce', level: 93 },
   { name: 'AI 产品经理', role: '技术驱动型 · 抗压执行力', tag: 'commerce', level: 90 },

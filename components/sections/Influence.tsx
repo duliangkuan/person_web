@@ -137,6 +137,14 @@ const FREELANCE = {
   ],
 };
 
+const IDENTITY_NODES = [
+  { title: '千余人 AI 社区', sub: '创办者 · 持续运营' },
+  { title: 'AI 社团社长', sub: '校内 AI 力量集结点' },
+  { title: 'AI 类大创负责人', sub: '大学生创新创业项目' },
+  { title: '北京人工智能产教融合基地', sub: '合伙人' },
+  { title: '京西智谷门头沟学校', sub: '国有独资 · 兼职助理讲师' },
+];
+
 const EVENTS = [
   {
     title: '京西智谷 · OpenClaw 百人线下大会',
@@ -230,6 +238,32 @@ export default function Influence() {
           </div>
           <div className="mt-4 font-mono text-[11px] text-bone/60">
             &gt; self_eval = np.array([{RADAR_AXES.map((a) => a.v).join(', ')}])
+          </div>
+        </motion.div>
+
+        {/* Identity nodes */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+          className="col-span-12 glass chrome-edge p-6 md:p-8"
+        >
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[11px]">
+            <span className="text-electro tracking-[0.35em]">[IDENTITY_NODES]</span>
+            <span className="text-bone/40">身份挂载点 · 全部在线</span>
+          </div>
+          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 font-mono">
+            {IDENTITY_NODES.map((n, i) => (
+              <div key={n.title} className="glass-electro p-3">
+                <div className="flex items-center gap-2 text-[9px] uppercase tracking-[0.25em] text-bone/40">
+                  <span className="h-1 w-1 bg-retina shadow-retina animate-pulse" />
+                  <span>node_{String(i + 1).padStart(2, '0')}</span>
+                </div>
+                <div className="mt-1.5 font-hans text-sm font-bold text-bone leading-snug">{n.title}</div>
+                <div className="mt-1 text-[10px] text-retina/75 leading-relaxed">{n.sub}</div>
+              </div>
+            ))}
           </div>
         </motion.div>
 

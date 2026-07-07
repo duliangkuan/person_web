@@ -12,10 +12,11 @@ const IDENT_LINES: CRTLine[] = [
   { key: 'CALLSIGN',        value: 'VIBE_ARCHITECT',                               tint: 'retina' },
   { key: 'STATUS',          value: 'Lvl 20 / STDU_NODE / NEURAL_NETWORK_BUILDER',  tint: 'bone' },
   { key: 'BASE_NODE',       value: 'BEIJING_GRID',                                 tint: 'retina', badge: 'ONLINE & SYNCED', badgeTint: 'electro' },
-  { key: 'CURRENT_TASK',    value: 'OPENCLAW_OPTIMIZATION / AGENT_OPS',            tint: 'retina' },
+  { key: 'CURRENT_TASK',    value: 'HARNESS_EVAL_LOOP / AUTOVIDEO_SHIP',           tint: 'retina' },
   { key: 'COMMITS',         value: '804 this quarter',                             tint: 'bone' },
-  { key: 'AGENTS_DEPLOYED', value: 'OpenClaw · Hermes · Coze',                     tint: 'retina' },
+  { key: 'AGENTS_DEPLOYED', value: 'Harness · AutoVideo · OpenClaw',               tint: 'retina' },
   { key: 'WEAPONRY',        value: 'Cursor · ClaudeCode · Vibe_Coding',            tint: 'electro' },
+  { key: 'OPEN_CHANNEL',    value: 'AI_PRODUCT × AGENT_DEV · INTERN / BJ',         tint: 'electro', badge: 'IMMEDIATE_DEPLOY', badgeTint: 'retina' },
 ];
 
 const IconGithub = () => (
@@ -107,11 +108,13 @@ export default function Hero() {
           >
             {[
               'OpenClaw_Contributor',
+              'LLM-as-Judge',
               'RAG',
+              'MCP',
               'Agent_Ops',
               'Vibe_Coding',
+              'Remotion',
               'Coze × Dify × n8n',
-              'Figma',
               'Bitable',
             ].map((t) => (
               <span
