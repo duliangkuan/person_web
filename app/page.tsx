@@ -22,7 +22,7 @@ export default function Page() {
   const [booted, setBooted] = useState(false);
 
   return (
-    <main className="relative">
+    <main className="relative overflow-x-clip">
       <NeuralFlux />
       <CyberGrid />
       <div className="noise" />

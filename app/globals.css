@@ -15,7 +15,6 @@ html, body {
   color: #D7E3DB;
   cursor: none;
   overscroll-behavior: none;
-  overflow-x: hidden;
 }
 
 body {
