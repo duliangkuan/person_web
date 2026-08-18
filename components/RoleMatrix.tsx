@@ -20,7 +20,7 @@ const ROLES = [
   'EVAL-DRIVEN AGENT 开发者',
   'DEEPSEEK HARNESS DESKTOP · CO-FOUNDER & COO',
   '风云AI学习社 · 发起人',
-  'AGORAY · 14 位初创成员之一',
+  '数字生命卡兹克 AGORAY · 成员',
   'AI 智能体应用工程师（高级）',
 ];
 

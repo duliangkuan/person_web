@@ -25,7 +25,7 @@ const noto = Noto_Sans_SC({
 export const metadata: Metadata = {
   title: "风云｜AI Builder · Co-founder & COO",
   description:
-    "风云（杜亮宽）的个人站：deepseek-harness-desktop 联合创始人兼 COO、风云AI学习社发起人、AGORAY 初创成员、AI 智能体应用工程师（高级）。",
+    "风云（杜亮宽）的个人站：deepseek-harness-desktop 联合创始人兼 COO、风云AI学习社发起人、数字生命卡兹克 AGORAY 成员、AI 智能体应用工程师（高级）。",
   keywords: [
     'Du Fengyun',
     '杜亮宽',

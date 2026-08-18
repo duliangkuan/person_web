@@ -110,7 +110,7 @@ export default function Hero() {
               'OpenClaw_Contributor',
               'Co-founder_&_COO',
               'Fengyun_AI_Club',
-              'AGORAY_Initial_Member',
+              'AGORAY_Member',
               'LLM-as-Judge',
               'RAG',
               'MCP',

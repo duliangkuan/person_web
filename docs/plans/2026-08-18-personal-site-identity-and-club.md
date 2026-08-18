@@ -34,7 +34,7 @@
 
 **Steps:**
 1. Hero 当前任务改为 deepseek-harness-desktop 与风云AI学习社。
-2. RoleMatrix 加入 Co-founder & COO、学习社发起人、AGORAY 初创成员。
+2. RoleMatrix 加入 Co-founder & COO、学习社发起人、数字生命卡兹克 AGORAY 成员。
 3. 联系信息 Role 更新为 AI Builder / Co-founder & COO / 社群发起人。
 
 ### Task 3: 增加 deepseek-harness-desktop 项目卡
@@ -55,7 +55,7 @@
 - Modify: `app/layout.tsx`
 
 **Steps:**
-1. 新增学习社发起人、AGORAY 14 位初创成员之一、项目联创兼 COO。
+1. 新增学习社发起人、数字生命卡兹克 AGORAY 成员、项目联创兼 COO。
 2. 保留 AI 智能体应用工程师（高级）认证。
 3. 更新 title、description 和 keywords。
 

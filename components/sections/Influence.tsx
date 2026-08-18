@@ -140,7 +140,7 @@ const FREELANCE = {
 const IDENTITY_NODES = [
   { title: '风云AI学习社', sub: '发起人 · 两套云端每日系统' },
   { title: 'deepseek-harness-desktop', sub: '三位联合创始人之一 · COO' },
-  { title: 'AGORAY', sub: '青少年 AI 极客组织 · 14 位初创成员之一' },
+  { title: '数字生命卡兹克 AGORAY', sub: '成员' },
   { title: 'AI 智能体应用工程师', sub: '高级认证' },
   { title: '千余人 AI 社区', sub: '创办者 · 持续运营' },
   { title: 'AI 社团社长', sub: '校内 AI 力量集结点' },
