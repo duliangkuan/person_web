@@ -18,10 +18,10 @@ import { useEffect, useRef, useState } from 'react';
 const ROLES = [
   'VIBE_CODING 极客',
   'EVAL-DRIVEN AGENT 开发者',
-  'AI 产品 & 商业化操盘手',
-  'OPENCLAW 核心架构玩家',
-  '抖音 AI 创变者 · 大区赛',
-  '小红书 AI 博主',
+  'DEEPSEEK HARNESS DESKTOP · CO-FOUNDER & COO',
+  '风云AI学习社 · 发起人',
+  'AGORAY · 14 位初创成员之一',
+  'AI 智能体应用工程师（高级）',
 ];
 
 const CHARSET =

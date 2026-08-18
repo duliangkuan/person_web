@@ -12,9 +12,9 @@ const IDENT_LINES: CRTLine[] = [
   { key: 'CALLSIGN',        value: 'VIBE_ARCHITECT',                               tint: 'retina' },
   { key: 'STATUS',          value: 'Lvl 20 / STDU_NODE / NEURAL_NETWORK_BUILDER',  tint: 'bone' },
   { key: 'BASE_NODE',       value: 'BEIJING_GRID',                                 tint: 'retina', badge: 'ONLINE & SYNCED', badgeTint: 'electro' },
-  { key: 'CURRENT_TASK',    value: 'HARNESS_EVAL_LOOP / AUTOVIDEO_SHIP',           tint: 'retina' },
-  { key: 'COMMITS',         value: '804 this quarter',                             tint: 'bone' },
-  { key: 'AGENTS_DEPLOYED', value: 'Harness · AutoVideo · OpenClaw',               tint: 'retina' },
+  { key: 'CURRENT_TASK',    value: 'DEEPSEEK_HARNESS_DESKTOP / FENGYUN_AI_CLUB',    tint: 'retina' },
+  { key: 'FOUNDER_NODE',    value: 'CO-FOUNDER & COO / LEARNING_CLUB_FOUNDER',       tint: 'electro' },
+  { key: 'AGENTS_DEPLOYED', value: 'AI_DAILY · EVENT_RADAR · HARNESS',              tint: 'retina' },
   { key: 'WEAPONRY',        value: 'Cursor · ClaudeCode · Vibe_Coding',            tint: 'electro' },
   { key: 'OPEN_CHANNEL',    value: 'AI_PRODUCT × AGENT_DEV · INTERN / BJ',         tint: 'electro', badge: 'IMMEDIATE_DEPLOY', badgeTint: 'retina' },
 ];
@@ -35,7 +35,7 @@ export default function Hero() {
   return (
     <section id="hero" className="relative min-h-[100svh] w-full pt-24 md:pt-32 pb-24">
       {/* meta bar */}
-      <div className="mx-auto max-w-7xl px-6 md:px-10 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.35em] text-retina/70">
+      <div className="mx-auto max-w-7xl px-6 md:px-10 flex items-center gap-3 overflow-hidden font-mono text-[11px] uppercase tracking-[0.35em] text-retina/70">
         <span className="h-1.5 w-1.5 bg-retina shadow-retina animate-pulse" />
         <span>kernel_boot_sequence</span>
         <span className="text-bone/30">//</span>
@@ -108,6 +108,9 @@ export default function Hero() {
           >
             {[
               'OpenClaw_Contributor',
+              'Co-founder_&_COO',
+              'Fengyun_AI_Club',
+              'AGORAY_Initial_Member',
               'LLM-as-Judge',
               'RAG',
               'MCP',

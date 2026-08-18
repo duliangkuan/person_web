@@ -138,6 +138,10 @@ const FREELANCE = {
 };
 
 const IDENTITY_NODES = [
+  { title: '风云AI学习社', sub: '发起人 · 两套云端每日系统' },
+  { title: 'deepseek-harness-desktop', sub: '三位联合创始人之一 · COO' },
+  { title: 'AGORAY', sub: '青少年 AI 极客组织 · 14 位初创成员之一' },
+  { title: 'AI 智能体应用工程师', sub: '高级认证' },
   { title: '千余人 AI 社区', sub: '创办者 · 持续运营' },
   { title: 'AI 社团社长', sub: '校内 AI 力量集结点' },
   { title: 'AI 类大创负责人', sub: '大学生创新创业项目' },
@@ -253,7 +257,7 @@ export default function Influence() {
             <span className="text-electro tracking-[0.35em]">[IDENTITY_NODES]</span>
             <span className="text-bone/40">身份挂载点 · 全部在线</span>
           </div>
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 font-mono">
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 font-mono">
             {IDENTITY_NODES.map((n, i) => (
               <div key={n.title} className="glass-electro p-3">
                 <div className="flex items-center gap-2 text-[9px] uppercase tracking-[0.25em] text-bone/40">

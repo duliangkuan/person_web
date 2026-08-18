@@ -3,9 +3,11 @@
 import { useEffect, useRef, useState } from 'react';
 
 const COMMANDS: Record<string, { target?: string; say?: string }> = {
-  help: { say: '[cmds] show projects | show stack | show experience | show influence | show contact | whoami | clear' },
-  whoami: { say: 'du.fengyun — AI Architect · Product × Commercial · OpenClaw contributor' },
+  help: { say: '[cmds] show learning | show projects | show stack | show experience | show influence | show contact | whoami | clear' },
+  whoami: { say: 'du.fengyun — AI Builder · deepseek-harness-desktop Co-founder & COO · 风云AI学习社发起人' },
   'show hero': { target: 'hero' },
+  'show learning': { target: 'learning' },
+  'show club': { target: 'learning' },
   'show stack': { target: 'stack' },
   'show skills': { target: 'stack' },
   'show experience': { target: 'experience' },
@@ -113,7 +115,7 @@ export default function TerminalInput() {
                 }
               }}
               placeholder="show projects | show stack | whoami | help  (press `/`)"
-              className="flex-1 bg-transparent outline-none text-bone placeholder:text-bone/30 caret-retina"
+              className="min-w-0 flex-1 bg-transparent outline-none text-bone placeholder:text-bone/30 caret-retina"
               autoComplete="off" spellCheck={false}
             />
             <span className="hidden md:inline text-[10px] uppercase tracking-[0.35em] text-bone/40">

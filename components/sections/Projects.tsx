@@ -13,6 +13,71 @@ export default function Projects() {
       />
 
       <div className="grid grid-cols-12 gap-6">
+        {/* deepseek-harness-desktop */}
+        <motion.div
+          initial={{ opacity: 0, y: 26 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7 }}
+          className="col-span-12 glass chrome-edge overflow-hidden"
+        >
+          <div className="grid grid-cols-12">
+            <div className="col-span-12 lg:col-span-8 p-6 md:p-9 relative overflow-hidden">
+              <div className="absolute -right-16 -top-28 h-72 w-72 rounded-full bg-electro/15 blur-3xl pointer-events-none" />
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[11px]">
+                <span className="text-retina tracking-[0.35em]">[DEEPSEEK_HARNESS_DESKTOP]</span>
+                <span className="border border-retina/40 bg-retina/5 px-2 py-0.5 text-retina">13K+ STARS</span>
+                <span className="text-bone/35">·</span>
+                <span className="text-electro">MIT · TYPESCRIPT</span>
+              </div>
+
+              <h3 className="mt-5 max-w-4xl font-hans text-4xl md:text-6xl font-black leading-[0.88] text-bone">
+                <span className="glitch" data-text="万星开源桌面智能体">万星开源桌面智能体</span>
+              </h3>
+              <p className="mt-5 max-w-3xl font-mono text-[13px] md:text-sm leading-relaxed text-bone/75">
+                为 DeepSeek Harness 插件生态打造的现代化桌面端解决方案。万物皆插件，桌面本身也是插件。
+                三位联合创始人共同发起，我担任 <span className="text-retina">Co-founder & COO</span>，
+                负责品牌传播、对外推广、社区建设与运营。
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2 font-mono text-[10px] tracking-[0.2em]">
+                {['CO-FOUNDER', 'CHIEF_OPERATING_OFFICER', 'COMMUNITY', 'GROWTH', 'OPEN_SOURCE'].map((tag) => (
+                  <span key={tag} className="border border-electro/30 bg-electro/[0.05] px-3 py-1.5 text-electro/90">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href="https://github.com/anywhere-labs/deepseek-harness-desktop"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex items-center gap-3 border border-retina/50 px-5 py-3 font-mono text-xs tracking-[0.28em] text-retina hover:bg-retina hover:text-black transition-colors"
+              >
+                OPEN REPOSITORY <span aria-hidden>↗</span>
+              </a>
+            </div>
+
+            <div className="col-span-12 lg:col-span-4 border-t lg:border-t-0 lg:border-l border-retina/15 bg-black/40 p-6 md:p-8 flex flex-col justify-between">
+              <div>
+                <div className="font-mono text-[10px] tracking-[0.32em] text-bone/40">/repository.telemetry</div>
+                <div className="mt-5 grid grid-cols-2 gap-3 font-mono text-[11px]">
+                  <Stat k="GitHub Stars" v="13.3K+" accent />
+                  <Stat k="Forks" v="603" />
+                  <Stat k="License" v="MIT" />
+                  <Stat k="Core" v="Plugin" accent />
+                </div>
+              </div>
+              <div className="mt-8 border border-bone/10 p-4 font-mono text-[11px] leading-relaxed text-bone/55">
+                <div className="text-retina">&gt; org.anywhere_labs</div>
+                <div>&gt; role = cofounder.coo</div>
+                <div>&gt; scope = brand + community + ops</div>
+                <div className="text-electro">&gt; status = shipping</div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Harness / fengyun-publish */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}

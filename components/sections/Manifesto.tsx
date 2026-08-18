@@ -6,7 +6,7 @@ import SectionHeading from '../SectionHeading';
 
 const CONTACT = {
   Name: '杜亮宽 (Du Fengyun)',
-  Role: 'AI Architect & Product & Commercial Lead',
+  Role: 'AI Builder · Co-founder & COO · 风云AI学习社发起人',
   Phone: '15614325230',
   Email: '2330304961@qq.com',
 };
@@ -108,7 +108,7 @@ export default function Manifesto() {
             {/* line numbers column */}
             <pre
               ref={codeRef}
-              className="whitespace-pre overflow-x-auto text-bone/90 leading-[1.85]"
+              className="min-w-0 max-w-full whitespace-pre overflow-x-auto text-bone/90 leading-[1.85]"
             >
 {seq.map((line, i) => (
   <div key={i} className="flex">

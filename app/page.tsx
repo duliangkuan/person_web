@@ -9,6 +9,7 @@ import CyberGrid from '@/components/CyberGrid';
 import TopHUD from '@/components/TopHUD';
 import TerminalInput from '@/components/TerminalInput';
 import Hero from '@/components/sections/Hero';
+import LearningClub from '@/components/sections/LearningClub';
 import Stack from '@/components/sections/Stack';
 import Experience from '@/components/sections/Experience';
 import Projects from '@/components/sections/Projects';
@@ -35,6 +36,7 @@ export default function Page() {
         <>
           <TopHUD />
           <Hero />
+          <LearningClub />
           <Stack />
           <Experience />
           <Projects />

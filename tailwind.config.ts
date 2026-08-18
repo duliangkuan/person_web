@@ -18,7 +18,7 @@ const config: Config = {
       },
       fontFamily: {
         mono: ['var(--font-jetbrains)', 'JetBrains Mono', 'Fira Code', 'ui-monospace', 'monospace'],
-        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-plex)', 'IBM Plex Sans', 'system-ui', 'sans-serif'],
         hans: ['var(--font-noto)', '"Noto Sans SC"', 'system-ui', 'sans-serif'],
       },
       boxShadow: {

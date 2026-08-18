@@ -18,6 +18,8 @@ type Level = 'info' | 'ok' | 'warn' | 'neural' | 'commerce';
 type Tpl = { build: (i: number) => string; level: Level; weight: number };
 
 const TEMPLATES: Tpl[] = [
+  { level: 'ok',       weight: 3, build: ()  => `deepseek_harness_desktop.community.sync → 13K+ stars` },
+  { level: 'commerce', weight: 2, build: ()  => `fengyun_ai_club.push(daily=09:00,event=10:00) → delivered` },
   { level: 'ok',       weight: 3, build: (i) => `harness.judge(article#${140 + (i % 60)}) rubric=${(3.6 + Math.random() * 1.3).toFixed(1)}/5 → ${Math.random() > 0.3 ? 'gate_pass' : 'rewrite_loop'}` },
   { level: 'neural',   weight: 2, build: (i) => `autovideo.render(remotion) scene=${1 + (i % 5)}/5 → mp4 ok` },
   { level: 'info',     weight: 1, build: ()  => `tts.eval(minimax|volc|qwen3|fish) → winner locked` },
