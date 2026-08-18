@@ -12,9 +12,9 @@ const SYSTEMS = [
     status: 'CLOUD · ONLINE',
   },
   {
-    time: '10:00',
-    code: 'EVENT_OPPORTUNITY_RADAR',
-    title: 'AI 活动信息整合',
+    time: '09:10',
+    code: 'DAILY_AI_ACTIVITY_PUSH',
+    title: '每日 AI 活动推送',
     desc: '每日扫描全国黑客松活动与其他 AI 活动，整理时间、地点和报名入口。',
     status: 'DEEPSEEK · ONLINE',
   },
@@ -34,8 +34,8 @@ const COMMUNITY = [
 ];
 
 export default function LearningClub() {
-  const goContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const goJoin = () => {
+    document.getElementById('learning-payment')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -66,7 +66,7 @@ export default function LearningClub() {
           <div className="mt-8 font-mono text-bone/45 text-[11px] tracking-[0.3em]">MONTHLY_ACCESS</div>
           <div className="mt-1 flex items-end gap-3">
             <span className="font-hans text-6xl md:text-8xl font-black leading-none glow-retina">49.9</span>
-            <span className="pb-2 font-mono text-sm text-bone/60">CNY / 月</span>
+            <span className="pb-2 font-mono text-sm text-bone/60">CNY · 当前使用至 09.30</span>
           </div>
 
           <p className="mt-6 max-w-md font-hans text-lg leading-relaxed text-bone/85">
@@ -82,10 +82,10 @@ export default function LearningClub() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <button
-              onClick={goContact}
+              onClick={goJoin}
               className="px-5 py-3 border border-retina bg-retina/10 font-mono text-xs tracking-[0.28em] text-retina hover:bg-retina hover:text-black transition-colors"
             >
-              联系加入 →
+              扫码加入 →
             </button>
             <a
               href="https://ai.dufengyun.xyz/today"
@@ -154,6 +154,79 @@ export default function LearningClub() {
           </motion.div>
         </div>
       </div>
+
+      <motion.div
+        id="learning-payment"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.65 }}
+        className="mt-6 grid grid-cols-12 overflow-hidden border border-retina/30 bg-black/45 shadow-retina"
+      >
+        <div className="col-span-12 border-b border-retina/20 bg-retina/[0.03] p-5 md:p-8 lg:col-span-5 lg:border-b-0 lg:border-r">
+          <div className="mx-auto max-w-[330px]">
+            <div className="mb-4 flex items-center justify-between font-mono text-[10px] tracking-[0.24em] text-retina">
+              <span>[MEMBERSHIP_ACCESS]</span>
+              <span className="text-bone/45">PAYMENT QR</span>
+            </div>
+            <a
+              href="/images/fengyun-ai-learning-club-payment-poster.png"
+              target="_blank"
+              rel="noreferrer"
+              className="group block"
+              aria-label="在新窗口打开风云AI学习社海报与收款二维码"
+            >
+              <img
+                src="/images/fengyun-ai-learning-club-payment-poster.png"
+                alt="风云AI学习社服务与加入二维码海报"
+                className="w-full border border-retina/25 bg-black object-contain transition-opacity group-hover:opacity-85"
+              />
+              <span className="mt-3 block text-center font-mono text-[10px] tracking-[0.2em] text-bone/50 group-hover:text-retina transition-colors">
+                点击海报可放大 / 保存扫码
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div className="col-span-12 p-6 md:p-8 lg:col-span-7 lg:p-10">
+          <div className="font-mono text-[10px] uppercase tracking-[0.32em] text-electro">[MEMBER_SERVICE_INDEX]</div>
+          <h3 className="mt-4 font-hans text-3xl font-black leading-tight text-bone md:text-5xl">
+            一个持续更新的 AI 信息、机会与资源节点。
+          </h3>
+          <p className="mt-5 max-w-2xl font-hans text-base leading-relaxed text-bone/75 md:text-lg">
+            每日信息交付在飞书会员群，日常交流留在微信社群；不做课程或固定直播，重点是让真正有用的信息、活动与使用路径持续可达。
+          </p>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <ServiceItem
+              code="01 / DAILY_SIGNAL"
+              title="每日 AI 日报"
+              desc="每天整理值得关注的模型、产品、公司和行业变化。"
+            />
+            <ServiceItem
+              code="02 / ACTIVITY_RADAR"
+              title="每日 AI 活动推送"
+              desc="黑客松与其他 AI 活动分开整理，尽量提供时间、地点与报名入口。"
+            />
+            <ServiceItem
+              code="03 / RESOURCE_INDEX"
+              title="会员资源整合清单"
+              desc="AI 工具、资料、活动与机会入口、实用网站及其他经过筛选的资源。"
+            />
+            <ServiceItem
+              code="04 / CODING_PATH"
+              title="AI 编程工具使用路径"
+              desc="Claude Code、Codex 等工具的合规使用指引、配置教程与实战路径。"
+            />
+          </div>
+
+          <div className="mt-8 border-l-2 border-retina bg-retina/[0.05] px-5 py-4">
+            <div className="font-mono text-[10px] tracking-[0.26em] text-retina">CURRENT_MEMBER_WINDOW</div>
+            <p className="mt-2 font-hans text-lg font-bold text-bone">现在加入，支付 49.9 元即可使用至 2026 年 9 月 30 日。</p>
+            <p className="mt-2 font-hans text-sm leading-relaxed text-bone/65">扫描左侧海报二维码付款后，将支付截图发给我；我会在 24 小时内拉你进入会员飞书群和微信交流社群。</p>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
@@ -164,5 +237,15 @@ function Metric({ label, value, accent }: { label: string; value: string; accent
       <div className="text-[9px] tracking-[0.25em] text-bone/40">{label}</div>
       <div className={`mt-1 text-xl font-black ${accent ? 'glow-retina' : 'text-bone'}`}>{value}</div>
     </div>
+  );
+}
+
+function ServiceItem({ code, title, desc }: { code: string; title: string; desc: string }) {
+  return (
+    <article className="border border-bone/10 bg-black/30 p-4 transition-colors hover:border-electro/50">
+      <div className="font-mono text-[9px] tracking-[0.2em] text-electro/80">{code}</div>
+      <h4 className="mt-2 font-hans text-lg font-black text-bone">{title}</h4>
+      <p className="mt-2 font-hans text-sm leading-relaxed text-bone/65">{desc}</p>
+    </article>
   );
 }
