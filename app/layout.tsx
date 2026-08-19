@@ -25,11 +25,13 @@ const noto = Noto_Sans_SC({
 export const metadata: Metadata = {
   title: "风云｜AI Builder · Co-founder & COO",
   description:
-    "风云（杜亮宽）的个人站：deepseek-harness-desktop 联合创始人兼 COO、风云AI学习社发起人、数字生命卡兹克 AGORAY 成员、AI 智能体应用工程师（高级）。",
+    "风云（杜亮宽）的个人站：deepseek-harness-desktop 联合创始人兼 COO、风云AI学习社与风云AI私董会发起人、数字生命卡兹克 AGORAY 成员、AI 智能体应用工程师（高级）。",
   keywords: [
     'Du Fengyun',
     '杜亮宽',
     '风云AI学习社',
+    '风云AI私董会',
+    'FDE实战',
     'deepseek-harness-desktop',
     'Co-founder',
     'COO',
@@ -54,7 +56,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN" className={`${plex.variable} ${jetbrains.variable} ${noto.variable}`}>
-      <body className="font-sans text-bone antialiased overflow-x-hidden">
+      <body className="font-sans text-bone antialiased">
         {children}
       </body>
     </html>

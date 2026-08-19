@@ -33,17 +33,39 @@ const COMMUNITY = [
   },
 ];
 
+const FDE_COURSES = [
+  {
+    code: 'CODEX_CLI',
+    title: 'Codex + CLI',
+    desc: '飞书办公、多维表格与视频生成自动化。',
+  },
+  {
+    code: 'CODEX_RPA',
+    title: 'Codex + RPA',
+    desc: '浏览器自动化与企业级 RPA 工作流。',
+  },
+  {
+    code: 'CODEX_WEB',
+    title: 'Codex + Web',
+    desc: '低成本搭建并上线生产级网站。',
+  },
+];
+
 export default function LearningClub() {
   const goJoin = () => {
     document.getElementById('learning-payment')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  const goContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <section id="learning" className="relative mx-auto max-w-7xl px-6 md:px-10 py-24 md:py-32">
       <SectionHeading
-        tag="[FENGYUN_AI_LEARNING_CLUB] // 01"
-        title="风云AI学习社"
-        subtitle="每天替你扫信息、找活动；群里聊真实问题。一个持续在线的 AI 学习与机会节点。"
+        tag="[FENGYUN_AI_PRODUCT_MATRIX] // 01"
+        title="风云AI产品服务"
+        subtitle="学习社提供持续的信息、活动与资源；私董会围绕真实业务和项目，提供 FDE 实战与深度指导。"
       />
 
       <div className="grid grid-cols-12 gap-6">
@@ -227,7 +249,110 @@ export default function LearningClub() {
           </div>
         </div>
       </motion.div>
+
+      <PrivateBoard onContact={goContact} />
     </section>
+  );
+}
+
+function PrivateBoard({ onContact }: { onContact: () => void }) {
+  return (
+    <motion.div
+      id="private-board"
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.7 }}
+      className="mt-10 grid grid-cols-12 overflow-hidden border border-[#d9ad62]/40 bg-[#090806]/80 shadow-[0_0_55px_rgba(217,173,98,0.10)]"
+    >
+      <div className="col-span-12 border-b border-[#d9ad62]/20 bg-[#d9ad62]/[0.035] p-5 md:p-8 lg:col-span-5 lg:border-b-0 lg:border-r">
+        <div className="mx-auto max-w-[330px]">
+          <div className="mb-4 flex items-center justify-between font-mono text-[10px] tracking-[0.22em] text-[#e0bd78]">
+            <span>[FENGYUN_AI_PRIVATE_BOARD]</span>
+            <span className="text-bone/40">FDE · PRACTICE</span>
+          </div>
+          <a
+            href="/images/fengyun-ai-private-board-poster.png"
+            target="_blank"
+            rel="noreferrer"
+            className="group block"
+            aria-label="在新窗口打开风云AI私董会商品海报"
+          >
+            <img
+              src="/images/fengyun-ai-private-board-poster.png"
+              alt="风云AI私董会首期服务海报"
+              className="w-full border border-[#d9ad62]/30 bg-black object-contain transition-opacity group-hover:opacity-85"
+            />
+            <span className="mt-3 block text-center font-mono text-[10px] tracking-[0.18em] text-bone/45 transition-colors group-hover:text-[#e0bd78]">
+              点击查看完整海报
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div className="col-span-12 p-6 md:p-8 lg:col-span-7 lg:p-10">
+        <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#d9ad62]">[PRIVATE_FDE_SERVICE]</div>
+        <div className="mt-4 flex flex-wrap items-end justify-between gap-5">
+          <div>
+            <h3 className="font-hans text-3xl font-black leading-tight text-bone md:text-5xl">风云AI私董会</h3>
+            <p className="mt-3 max-w-2xl font-hans text-base leading-relaxed text-bone/70 md:text-lg">
+              面向有真实业务、项目或产品想法，希望把 AI 真正用起来的人。
+            </p>
+          </div>
+          <div className="border-l border-[#d9ad62]/40 pl-5">
+            <div className="font-mono text-[9px] tracking-[0.2em] text-bone/40">FOUNDING ACCESS</div>
+            <div className="mt-1 font-hans text-4xl font-black text-[#f0d6a0]">1499<span className="ml-2 text-sm text-bone/45">元</span></div>
+            <div className="mt-1 font-hans text-xs text-bone/50">首期服务至 2026.09.30</div>
+          </div>
+        </div>
+
+        <div className="mt-8">
+          <div className="font-mono text-[10px] tracking-[0.25em] text-[#d9ad62]">FDE 实战录播课程</div>
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            {FDE_COURSES.map((course, index) => (
+              <article key={course.code} className="border border-[#d9ad62]/15 bg-[#d9ad62]/[0.035] p-4 transition-colors hover:border-[#d9ad62]/45">
+                <div className="font-mono text-[9px] tracking-[0.18em] text-[#d9ad62]/70">0{index + 1} / {course.code}</div>
+                <h4 className="mt-2 font-hans text-lg font-black text-bone">{course.title}</h4>
+                <p className="mt-2 font-hans text-sm leading-relaxed text-bone/60">{course.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-7 grid gap-3 sm:grid-cols-2">
+          <PrivateBenefit title="纸质实战资料" desc="实战经验、SOP、案例与踩坑记录。" />
+          <PrivateBenefit title="2 次业务深度分析" desc="每次 60 分钟，制定方向并阶段复盘。" />
+          <PrivateBenefit title="120 分钟一对一答疑" desc="课程或项目问题，可按 30／60 分钟预约。" />
+          <PrivateBenefit title="学习社全部权益" desc="AI 日报、活动推送、资源清单与社群交流。" />
+        </div>
+
+        <div className="mt-7 border-l-2 border-[#d9ad62] bg-[#d9ad62]/[0.055] px-5 py-4">
+          <p className="font-hans text-sm leading-relaxed text-bone/70">
+            本期腾讯会议总时长最多 4 小时；包含教学、诊断、排查与关键原型共创，不包含完整商业项目代开发。
+          </p>
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center gap-4">
+          <button
+            type="button"
+            onClick={onContact}
+            className="border border-[#d9ad62] bg-[#d9ad62]/10 px-5 py-3 font-mono text-xs tracking-[0.24em] text-[#f0d6a0] transition-colors hover:bg-[#d9ad62] hover:text-black"
+          >
+            联系加入 →
+          </button>
+          <span className="font-hans text-xs leading-relaxed text-bone/45">资源对接与闭门活动按实际情况安排，不承诺固定频率。</span>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function PrivateBenefit({ title, desc }: { title: string; desc: string }) {
+  return (
+    <article className="border border-bone/10 bg-black/25 p-4">
+      <h4 className="font-hans text-base font-black text-[#f0d6a0]">{title}</h4>
+      <p className="mt-1 font-hans text-sm leading-relaxed text-bone/60">{desc}</p>
+    </article>
   );
 }
 
