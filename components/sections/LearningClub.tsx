@@ -134,7 +134,7 @@ export default function LearningClub() {
             </div>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               {SYSTEMS.map((system, index) => (
-                <div key={system.code} className="group border border-bone/10 bg-black/35 p-5 hover:border-retina/40 transition-colors">
+                <div key={system.code} className="group rounded-xl border border-[#e6e3dd] bg-white p-5 transition-colors hover:border-retina/40 hover:bg-[#fffaf6]">
                   <div className="flex items-start justify-between gap-4 font-mono">
                     <span className="text-3xl font-black text-bone/90">{system.time}</span>
                     <span className="text-[9px] tracking-[0.22em] text-retina/75">{system.status}</span>
@@ -183,9 +183,9 @@ export default function LearningClub() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.65 }}
-        className="mt-6 grid grid-cols-12 overflow-hidden border border-retina/30 bg-black/45 shadow-retina"
+        className="mt-6 grid grid-cols-12 overflow-hidden rounded-2xl border border-[#e6e3dd] bg-white shadow-retina"
       >
-        <div className="col-span-12 border-b border-retina/20 bg-retina/[0.03] p-5 md:p-8 lg:col-span-5 lg:border-b-0 lg:border-r">
+        <div className="col-span-12 min-w-0 border-b border-retina/20 bg-retina/[0.03] p-5 md:p-8 lg:col-span-5 lg:border-b-0 lg:border-r">
           <div className="mx-auto max-w-[330px]">
             <div className="mb-4 flex items-center justify-between font-mono text-[10px] tracking-[0.24em] text-retina">
               <span>[MEMBERSHIP_ACCESS]</span>
@@ -195,13 +195,13 @@ export default function LearningClub() {
               href="/images/fengyun-ai-learning-club-payment-poster.png"
               target="_blank"
               rel="noreferrer"
-              className="group block"
+              className="group block min-w-0 max-w-full"
               aria-label="在新窗口打开风云AI学习社海报与收款二维码"
             >
               <img
                 src="/images/fengyun-ai-learning-club-payment-poster.png"
                 alt="风云AI学习社服务与加入二维码海报"
-                className="w-full border border-retina/25 bg-black object-contain transition-opacity group-hover:opacity-85"
+                className="h-auto w-full max-w-full rounded-xl border border-[#e6e3dd] bg-[#f3ede4] object-contain transition-opacity group-hover:opacity-85"
               />
               <span className="mt-3 block text-center font-mono text-[10px] tracking-[0.2em] text-bone/50 group-hover:text-retina transition-colors">
                 点击海报可放大 / 保存扫码
@@ -210,7 +210,7 @@ export default function LearningClub() {
           </div>
         </div>
 
-        <div className="col-span-12 p-6 md:p-8 lg:col-span-7 lg:p-10">
+        <div className="col-span-12 min-w-0 p-6 md:p-8 lg:col-span-7 lg:p-10">
           <div className="font-mono text-[10px] uppercase tracking-[0.32em] text-electro">[MEMBER_SERVICE_INDEX]</div>
           <h3 className="mt-4 font-hans text-3xl font-black leading-tight text-bone md:text-5xl">
             一个持续更新的 AI 信息、机会与资源节点。
@@ -263,11 +263,11 @@ function PrivateBoard({ onContact }: { onContact: () => void }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.7 }}
-      className="mt-10 grid grid-cols-12 overflow-hidden border border-[#d9ad62]/40 bg-[#090806]/80 shadow-[0_0_55px_rgba(217,173,98,0.10)]"
+      className="mt-10 grid grid-cols-12 overflow-hidden rounded-2xl border border-[#e2c78f] bg-[#fffdf8] shadow-[0_18px_45px_-32px_rgba(140,100,34,0.45)]"
     >
-      <div className="col-span-12 border-b border-[#d9ad62]/20 bg-[#d9ad62]/[0.035] p-5 md:p-8 lg:col-span-5 lg:border-b-0 lg:border-r">
+      <div className="col-span-12 min-w-0 border-b border-[#e2c78f] bg-[#f8f1df] p-5 md:p-8 lg:col-span-5 lg:border-b-0 lg:border-r">
         <div className="mx-auto max-w-[330px]">
-          <div className="mb-4 flex items-center justify-between font-mono text-[10px] tracking-[0.22em] text-[#e0bd78]">
+          <div className="mb-4 flex items-center justify-between font-mono text-[10px] tracking-[0.22em] text-[#8c6422]">
             <span>[FENGYUN_AI_PRIVATE_BOARD]</span>
             <span className="text-bone/40">FDE · PRACTICE</span>
           </div>
@@ -275,23 +275,23 @@ function PrivateBoard({ onContact }: { onContact: () => void }) {
             href="/images/fengyun-ai-private-board-poster.png"
             target="_blank"
             rel="noreferrer"
-            className="group block"
+            className="group block min-w-0 max-w-full"
             aria-label="在新窗口打开风云AI私董会商品海报"
           >
             <img
               src="/images/fengyun-ai-private-board-poster.png"
               alt="风云AI私董会首期服务海报"
-              className="w-full border border-[#d9ad62]/30 bg-black object-contain transition-opacity group-hover:opacity-85"
+              className="h-auto w-full max-w-full rounded-xl border border-[#d9ad62]/30 bg-[#f3ede4] object-contain transition-opacity group-hover:opacity-85"
             />
-            <span className="mt-3 block text-center font-mono text-[10px] tracking-[0.18em] text-bone/45 transition-colors group-hover:text-[#e0bd78]">
+            <span className="mt-3 block text-center font-mono text-[10px] tracking-[0.18em] text-bone/45 transition-colors group-hover:text-[#8c6422]">
               点击查看完整海报
             </span>
           </a>
         </div>
       </div>
 
-      <div className="col-span-12 p-6 md:p-8 lg:col-span-7 lg:p-10">
-        <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#d9ad62]">[PRIVATE_FDE_SERVICE]</div>
+      <div className="col-span-12 min-w-0 p-6 md:p-8 lg:col-span-7 lg:p-10">
+        <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#8c6422]">[PRIVATE_FDE_SERVICE]</div>
         <div className="mt-4 flex flex-wrap items-end justify-between gap-5">
           <div>
             <h3 className="font-hans text-3xl font-black leading-tight text-bone md:text-5xl">风云AI私董会</h3>
@@ -301,17 +301,17 @@ function PrivateBoard({ onContact }: { onContact: () => void }) {
           </div>
           <div className="border-l border-[#d9ad62]/40 pl-5">
             <div className="font-mono text-[9px] tracking-[0.2em] text-bone/40">FOUNDING ACCESS</div>
-            <div className="mt-1 font-hans text-4xl font-black text-[#f0d6a0]">1499<span className="ml-2 text-sm text-bone/45">元</span></div>
+            <div className="mt-1 font-hans text-4xl font-black text-[#8c6422]">1499<span className="ml-2 text-sm text-bone/45">元</span></div>
             <div className="mt-1 font-hans text-xs text-bone/50">首期服务至 2026.09.30</div>
           </div>
         </div>
 
         <div className="mt-8">
-          <div className="font-mono text-[10px] tracking-[0.25em] text-[#d9ad62]">FDE 实战录播课程</div>
+          <div className="font-mono text-[10px] tracking-[0.25em] text-[#8c6422]">FDE 实战录播课程</div>
           <div className="mt-4 grid gap-3 md:grid-cols-3">
             {FDE_COURSES.map((course, index) => (
-              <article key={course.code} className="border border-[#d9ad62]/15 bg-[#d9ad62]/[0.035] p-4 transition-colors hover:border-[#d9ad62]/45">
-                <div className="font-mono text-[9px] tracking-[0.18em] text-[#d9ad62]/70">0{index + 1} / {course.code}</div>
+              <article key={course.code} className="rounded-xl border border-[#eadbbd] bg-white p-4 transition-colors hover:border-[#caa35c]">
+                <div className="font-mono text-[9px] tracking-[0.18em] text-[#8c6422]/70">0{index + 1} / {course.code}</div>
                 <h4 className="mt-2 font-hans text-lg font-black text-bone">{course.title}</h4>
                 <p className="mt-2 font-hans text-sm leading-relaxed text-bone/60">{course.desc}</p>
               </article>
@@ -326,7 +326,7 @@ function PrivateBoard({ onContact }: { onContact: () => void }) {
           <PrivateBenefit title="学习社全部权益" desc="AI 日报、活动推送、资源清单与社群交流。" />
         </div>
 
-        <div className="mt-7 border-l-2 border-[#d9ad62] bg-[#d9ad62]/[0.055] px-5 py-4">
+        <div className="mt-7 border-l-4 border-[#caa35c] bg-[#f8f1df] px-5 py-4">
           <p className="font-hans text-sm leading-relaxed text-bone/70">
             本期腾讯会议总时长最多 4 小时；包含教学、诊断、排查与关键原型共创，不包含完整商业项目代开发。
           </p>
@@ -336,7 +336,7 @@ function PrivateBoard({ onContact }: { onContact: () => void }) {
           <button
             type="button"
             onClick={onContact}
-            className="border border-[#d9ad62] bg-[#d9ad62]/10 px-5 py-3 font-mono text-xs tracking-[0.24em] text-[#f0d6a0] transition-colors hover:bg-[#d9ad62] hover:text-black"
+            className="rounded-lg border border-[#caa35c] bg-[#caa35c] px-5 py-3 font-mono text-xs tracking-[0.24em] text-white transition-colors hover:bg-[#a77d34]"
           >
             联系加入 →
           </button>
@@ -349,8 +349,8 @@ function PrivateBoard({ onContact }: { onContact: () => void }) {
 
 function PrivateBenefit({ title, desc }: { title: string; desc: string }) {
   return (
-    <article className="border border-bone/10 bg-black/25 p-4">
-      <h4 className="font-hans text-base font-black text-[#f0d6a0]">{title}</h4>
+    <article className="rounded-xl border border-[#e6e3dd] bg-white p-4">
+      <h4 className="font-hans text-base font-black text-[#8c6422]">{title}</h4>
       <p className="mt-1 font-hans text-sm leading-relaxed text-bone/60">{desc}</p>
     </article>
   );
@@ -358,7 +358,7 @@ function PrivateBenefit({ title, desc }: { title: string; desc: string }) {
 
 function Metric({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
   return (
-    <div className="border border-bone/10 bg-black/30 p-3">
+    <div className="rounded-xl border border-[#e6e3dd] bg-[#fcfaf7] p-3">
       <div className="text-[9px] tracking-[0.25em] text-bone/40">{label}</div>
       <div className={`mt-1 text-xl font-black ${accent ? 'glow-retina' : 'text-bone'}`}>{value}</div>
     </div>
@@ -367,7 +367,7 @@ function Metric({ label, value, accent }: { label: string; value: string; accent
 
 function ServiceItem({ code, title, desc }: { code: string; title: string; desc: string }) {
   return (
-    <article className="border border-bone/10 bg-black/30 p-4 transition-colors hover:border-electro/50">
+    <article className="rounded-xl border border-[#e6e3dd] bg-white p-4 transition-colors hover:border-electro/50">
       <div className="font-mono text-[9px] tracking-[0.2em] text-electro/80">{code}</div>
       <h4 className="mt-2 font-hans text-lg font-black text-bone">{title}</h4>
       <p className="mt-2 font-hans text-sm leading-relaxed text-bone/65">{desc}</p>

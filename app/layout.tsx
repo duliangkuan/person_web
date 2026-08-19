@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#000000',
+  themeColor: '#FAF8F5',
   width: 'device-width',
   initialScale: 1,
 };
@@ -56,7 +56,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN" className={`${plex.variable} ${jetbrains.variable} ${noto.variable}`}>
-      <body className="font-sans text-bone antialiased">
+      <body className="font-sans text-ink antialiased">
         {children}
       </body>
     </html>

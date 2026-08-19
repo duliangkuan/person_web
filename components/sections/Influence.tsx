@@ -33,14 +33,14 @@ function Waveform({ height = 80, points = 140, hot = 0.45 }: { height?: number; 
     <svg viewBox={`0 0 100 100`} className="w-full" style={{ height }} preserveAspectRatio="none">
       <defs>
         <linearGradient id="wave" x1="0" x2="1">
-          <stop offset="0%" stopColor="#7024FF" />
-          <stop offset="60%" stopColor="#00FF41" />
-          <stop offset="100%" stopColor="#00FF41" />
+          <stop offset="0%" stopColor="#5B8DEF" />
+          <stop offset="60%" stopColor="#D97757" />
+          <stop offset="100%" stopColor="#D97757" />
         </linearGradient>
       </defs>
-      <line x1="0" x2="100" y1="50" y2="50" stroke="rgba(0,255,65,0.12)" strokeDasharray="1 2" />
+      <line x1="0" x2="100" y1="50" y2="50" stroke="rgba(217,119,87,0.16)" strokeDasharray="1 2" />
       <path d={path} stroke="url(#wave)" strokeWidth="0.7" fill="none" vectorEffect="non-scaling-stroke" />
-      <path d={path + ' L100 100 L0 100 Z'} fill="rgba(0,255,65,0.04)" />
+      <path d={path + ' L100 100 L0 100 Z'} fill="rgba(217,119,87,0.06)" />
     </svg>
   );
 }
@@ -78,7 +78,7 @@ function Radar() {
             return `${cx + Math.cos(theta) * r * k},${cy + Math.sin(theta) * r * k}`;
           }).join(' ')}
           fill="none"
-          stroke="rgba(0,255,65,0.15)"
+          stroke="rgba(217,119,87,0.22)"
           strokeDasharray="2 3"
         />
       ))}
@@ -92,7 +92,7 @@ function Radar() {
               x1={cx} y1={cy}
               x2={cx + Math.cos(theta) * r}
               y2={cy + Math.sin(theta) * r}
-              stroke="rgba(0,255,65,0.18)"
+              stroke="rgba(217,119,87,0.24)"
               strokeDasharray="2 3"
             />
             <text
@@ -100,7 +100,7 @@ function Radar() {
               fontSize="9"
               textAnchor="middle"
               dominantBaseline="middle"
-              fill="rgba(215,227,219,0.7)"
+              fill="rgba(31,36,48,0.72)"
               fontFamily="JetBrains Mono, monospace"
             >
               {a.label}
@@ -113,13 +113,13 @@ function Radar() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         d={path}
-        fill="rgba(0,255,65,0.18)"
-        stroke="#00FF41"
+        fill="rgba(217,119,87,0.16)"
+        stroke="#D97757"
         strokeWidth="1.2"
-        style={{ filter: 'drop-shadow(0 0 6px rgba(0,255,65,0.6))' }}
+        style={{ filter: 'drop-shadow(0 3px 5px rgba(184,73,44,0.18))' }}
       />
       {pts.map((p, i) => (
-        <circle key={i} cx={p[0]} cy={p[1]} r="2.4" fill="#00FF41" />
+        <circle key={i} cx={p[0]} cy={p[1]} r="2.4" fill="#D97757" />
       ))}
     </svg>
   );

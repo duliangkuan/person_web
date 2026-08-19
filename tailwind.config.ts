@@ -8,13 +8,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        abyss: '#000000',
-        ink: '#0A0A0A',
-        grid: '#0F1411',
-        retina: '#00FF41',
-        electro: '#7024FF',
-        cursorGreen: '#00FF66',
-        bone: '#D7E3DB',
+        abyss: '#FAF8F5',
+        ink: '#1F2430',
+        grid: '#E6E3DD',
+        retina: '#D97757',
+        electro: '#5B8DEF',
+        cursorGreen: '#D97757',
+        bone: '#1F2430',
+        soft: '#5B6472',
+        line: '#E6E3DD',
+        paper: '#FAF8F5',
+        card: '#FFFFFF',
       },
       fontFamily: {
         mono: ['var(--font-jetbrains)', 'JetBrains Mono', 'Fira Code', 'ui-monospace', 'monospace'],
@@ -22,8 +26,8 @@ const config: Config = {
         hans: ['var(--font-noto)', '"Noto Sans SC"', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        retina: '0 0 24px rgba(0, 255, 65, 0.35), 0 0 2px rgba(0, 255, 65, 0.9)',
-        electro: '0 0 40px rgba(112, 36, 255, 0.45), 0 0 2px rgba(112, 36, 255, 0.9)',
+        retina: '0 12px 28px -18px rgba(217, 119, 87, 0.55)',
+        electro: '0 12px 28px -18px rgba(91, 141, 239, 0.45)',
       },
       keyframes: {
         flicker: {

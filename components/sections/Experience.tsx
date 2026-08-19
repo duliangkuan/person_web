@@ -34,7 +34,7 @@ const ITEMS = [
 function CommitHeatmap() {
   const weeks = 26;
   const days = 7;
-  const cells = Array.from({ length: weeks * days }, () => Math.random());
+  const cells = Array.from({ length: weeks * days }, (_, index) => ((index * 37 + 17) % 101) / 100);
   return (
     <div
       className="grid gap-[2px]"
@@ -45,10 +45,10 @@ function CommitHeatmap() {
           key={i}
           className="h-2 w-2"
           style={{
-            background: v < 0.2 ? 'rgba(0,255,65,0.06)' :
-              v < 0.5 ? 'rgba(0,255,65,0.25)' :
-                v < 0.8 ? 'rgba(0,255,65,0.55)' : '#00FF41',
-            boxShadow: v > 0.85 ? '0 0 6px rgba(0,255,65,0.9)' : undefined,
+            background: v < 0.2 ? 'rgba(217,119,87,0.08)' :
+              v < 0.5 ? 'rgba(217,119,87,0.24)' :
+                v < 0.8 ? 'rgba(217,119,87,0.52)' : '#D97757',
+            boxShadow: v > 0.85 ? '0 0 0 1px rgba(184,73,44,0.18)' : undefined,
           }}
         />
       ))}
@@ -70,8 +70,8 @@ export default function Experience() {
         <div
           className="absolute left-0 md:left-3 top-0 bottom-0 w-[2px]"
           style={{
-            background: 'linear-gradient(to bottom, rgba(0,255,65,0.9), rgba(112,36,255,0.9), rgba(0,255,65,0))',
-            boxShadow: '0 0 12px rgba(0,255,65,0.6)',
+            background: 'linear-gradient(to bottom, rgba(217,119,87,0.9), rgba(91,141,239,0.65), rgba(217,119,87,0))',
+            boxShadow: 'none',
           }}
         />
 

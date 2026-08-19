@@ -66,7 +66,7 @@ function Chip({ chip, index }: { chip: Chip; index: number }) {
       </div>
       <p className="mt-2 text-bone/70 leading-relaxed">{chip.role}</p>
 
-      <div className="mt-3 h-1 w-full bg-white/5 overflow-hidden">
+      <div className="mt-3 h-1 w-full overflow-hidden rounded-full bg-[#eee8df]">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${chip.level ?? 80}%` }}
@@ -77,7 +77,7 @@ function Chip({ chip, index }: { chip: Chip; index: number }) {
       </div>
 
       <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{ background: accent === 'electro' ? 'radial-gradient(circle, rgba(112,36,255,0.35), transparent 60%)' : 'radial-gradient(circle, rgba(0,255,65,0.3), transparent 60%)' }}
+        style={{ background: accent === 'electro' ? 'radial-gradient(circle, rgba(91,141,239,0.16), transparent 60%)' : 'radial-gradient(circle, rgba(217,119,87,0.18), transparent 60%)' }}
       />
     </motion.div>
   );

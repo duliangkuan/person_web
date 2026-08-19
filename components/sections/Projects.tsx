@@ -58,7 +58,7 @@ export default function Projects() {
               </a>
             </div>
 
-            <div className="col-span-12 lg:col-span-4 border-t lg:border-t-0 lg:border-l border-retina/15 bg-black/40 p-6 md:p-8 flex flex-col justify-between">
+            <div className="col-span-12 flex flex-col justify-between border-t border-[#e6e3dd] bg-[#fcfaf7] p-6 md:p-8 lg:col-span-4 lg:border-l lg:border-t-0">
               <div>
                 <div className="font-mono text-[10px] tracking-[0.32em] text-bone/40">/repository.telemetry</div>
                 <div className="mt-5 grid grid-cols-2 gap-3 font-mono text-[11px]">
