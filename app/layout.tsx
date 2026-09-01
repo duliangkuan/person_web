@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { IBM_Plex_Sans, JetBrains_Mono, Noto_Sans_SC } from 'next/font/google';
+import { SHOW_COMMERCIAL_OFFERS } from '@/config/site';
 import './globals.css';
 
 const plex = IBM_Plex_Sans({
@@ -25,13 +26,12 @@ const noto = Noto_Sans_SC({
 export const metadata: Metadata = {
   title: "风云｜AI Builder · Co-founder & COO",
   description:
-    "风云（杜亮宽）的个人站：deepseek-harness-desktop 联合创始人兼 COO、风云AI学习社与风云AI私董会发起人、数字生命卡兹克 AGORAY 成员、AI 智能体应用工程师（高级）。",
+    `风云（杜亮宽）的个人站：deepseek-harness-desktop 联合创始人兼 COO、风云AI学习社发起人${SHOW_COMMERCIAL_OFFERS ? '、风云AI私董会发起人' : ''}、数字生命卡兹克 AGORAY 成员、AI 智能体应用工程师（高级）。`,
   keywords: [
     'Du Fengyun',
     '杜亮宽',
     '风云AI学习社',
-    '风云AI私董会',
-    'FDE实战',
+    ...(SHOW_COMMERCIAL_OFFERS ? ['风云AI私董会', 'FDE实战'] : []),
     'deepseek-harness-desktop',
     'Co-founder',
     'COO',

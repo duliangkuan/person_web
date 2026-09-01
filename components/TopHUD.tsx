@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from 'react';
 
+import { SHOW_COMMERCIAL_OFFERS } from '@/config/site';
+
 const LINKS = [
   { id: 'hero', label: '00 ∙ boot' },
-  { id: 'learning', label: '01 ∙ learning' },
+  ...(SHOW_COMMERCIAL_OFFERS ? [{ id: 'learning', label: '01 ∙ learning' }] : []),
   { id: 'stack', label: '02 ∙ stack' },
   { id: 'experience', label: '03 ∙ records' },
   { id: 'projects', label: '04 ∙ flagship' },

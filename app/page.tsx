@@ -15,6 +15,7 @@ import Experience from '@/components/sections/Experience';
 import Projects from '@/components/sections/Projects';
 import Influence from '@/components/sections/Influence';
 import Manifesto from '@/components/sections/Manifesto';
+import { SHOW_COMMERCIAL_OFFERS } from '@/config/site';
 
 const NeuralFlux = dynamic(() => import('@/components/NeuralFlux'), { ssr: false });
 
@@ -36,7 +37,7 @@ export default function Page() {
         <>
           <TopHUD />
           <Hero />
-          <LearningClub />
+          {SHOW_COMMERCIAL_OFFERS && <LearningClub />}
           <Stack />
           <Experience />
           <Projects />

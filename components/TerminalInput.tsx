@@ -2,12 +2,20 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { SHOW_COMMERCIAL_OFFERS } from '@/config/site';
+
 const COMMANDS: Record<string, { target?: string; say?: string }> = {
-  help: { say: '[cmds] show learning | show projects | show stack | show experience | show influence | show contact | whoami | clear' },
+  help: {
+    say: `[cmds] ${SHOW_COMMERCIAL_OFFERS ? 'show learning | ' : ''}show projects | show stack | show experience | show influence | show contact | whoami | clear`,
+  },
   whoami: { say: 'du.fengyun — AI Builder · deepseek-harness-desktop Co-founder & COO · 风云AI学习社发起人' },
   'show hero': { target: 'hero' },
-  'show learning': { target: 'learning' },
-  'show club': { target: 'learning' },
+  ...(SHOW_COMMERCIAL_OFFERS
+    ? {
+        'show learning': { target: 'learning' },
+        'show club': { target: 'learning' },
+      }
+    : {}),
   'show stack': { target: 'stack' },
   'show skills': { target: 'stack' },
   'show experience': { target: 'experience' },
