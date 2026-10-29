@@ -1,52 +1,7 @@
-'use client';
-
-import dynamic from 'next/dynamic';
-import { useState } from 'react';
-
-import BootSequence from '@/components/BootSequence';
-import CursorBlock from '@/components/CursorBlock';
-import CyberGrid from '@/components/CyberGrid';
-import TopHUD from '@/components/TopHUD';
-import TerminalInput from '@/components/TerminalInput';
-import Hero from '@/components/sections/Hero';
-import LearningClub from '@/components/sections/LearningClub';
-import Stack from '@/components/sections/Stack';
-import Experience from '@/components/sections/Experience';
-import Projects from '@/components/sections/Projects';
-import Influence from '@/components/sections/Influence';
-import Manifesto from '@/components/sections/Manifesto';
-import { SHOW_COMMERCIAL_OFFERS } from '@/config/site';
-
-const NeuralFlux = dynamic(() => import('@/components/NeuralFlux'), { ssr: false });
-
-export default function Page() {
-  const [booted, setBooted] = useState(false);
-
-  return (
-    <main className="relative overflow-x-clip">
-      <NeuralFlux />
-      <CyberGrid />
-      <div className="noise" />
-      <div className="scanlines" />
-      <div className="vignette" />
-
-      {!booted && <BootSequence onExit={() => setBooted(true)} />}
-      <CursorBlock />
-
-      {booted && (
-        <>
-          <TopHUD />
-          <Hero />
-          {SHOW_COMMERCIAL_OFFERS && <LearningClub />}
-          <Stack />
-          <Experience />
-          <Projects />
-          <Influence />
-          <Manifesto />
-          <div className="h-24" />
-          <TerminalInput />
-        </>
-      )}
-    </main>
-  );
-}
+import type {Metadata} from 'next';
+import Link from 'next/link';
+import {SourceLinks} from '@/components/ProfileSite';
+import {SUMMARY,faq} from '@/lib/profile';
+export const metadata:Metadata={title:{absolute:'杜亮宽（风云 / Olando）｜AI Builder · 开源社区联创'},description:SUMMARY,alternates:{canonical:'/'}};
+const work=[{name:'DSH Desktop',tag:'OPEN SOURCE · COMMUNITY',href:'/projects/dsh-desktop',text:'参与早期发起，负责社区运营、社群维护与生态增长。桌面项目与上游框架分别介绍。'},{name:'窝知',tag:'PET TECH · PROTOTYPE',href:'/projects/wozhi',text:'从猫窝体重秤出发的宠物智能家居原型。参与产品设计、组织策划与商业化策略。'},{name:'AI Lab 兴趣社',tag:'LEARNING · COMMUNITY',href:'/community/ai-lab',text:'从具体问题与作品开始交流。兴趣小组筹备与登记入口，后续活动据实归档。'}];
+export default function Home(){return <main id="main-content"><section className="home-hero"><div className="hero-copy"><p className="eyebrow">AI BUILDER / COMMUNITY CO-INITIATOR</p><h1>杜亮宽<span className="hero-alias">风云 / Olando</span></h1><p className="hero-statement">把 AI 的想法，<br/>做成可用的东西。</p><p className="hero-intro">{SUMMARY}</p><div className="hero-actions"><Link className="primary-link" href="/projects">从作品认识我 ↗</Link><Link href="/about">完整介绍 →</Link></div><div className="identity-note"><span className="status-dot"/>开源社区联创 · AI 应用实践 · AGORAY 成员</div></div><figure className="portrait"><img src="/images/du-fengyun-portrait.jpg" alt="杜亮宽（风云、Olando）本人肖像" width="1279" height="1288" fetchPriority="high"/><figcaption>DU LIANGKUAN<span>创造，也连接。</span></figcaption></figure></section><section className="home-section" id="projects"><div className="section-heading"><p className="eyebrow">SELECTED WORK / 01</p><h2>作品，是更具体的介绍。</h2><Link href="/projects">全部项目 →</Link></div><div className="work-list">{work.map((w,i)=><Link className="work-row" href={w.href} key={w.href}><span className="record-index">{String(i+1).padStart(2,'0')}</span><div><p className="work-tag">{w.tag}</p><h3>{w.name}</h3><p>{w.text}</p></div><span className="work-arrow" aria-hidden="true">↗</span></Link>)}</div></section><section className="home-section focus-grid"><div><p className="eyebrow">CURRENT FOCUS / 02</p><h2>让技术落地，<br/>让协作持续。</h2></div><div className="focus-copy"><article><h3>AI 应用与工作流</h3><p>关注智能体工具组合、内容生产流程与应用开发，把任务、方法和结果放在同一条链上。</p></article><article><h3>开源社区与生态</h3><p>组织日常交流、维护社群和连接参与者。个人角色与团队成果分别说明。</p></article><Link href="/publications">阅读公开作品与资料 →</Link></div></section><section className="home-section credibility"><div className="section-heading"><p className="eyebrow">PUBLIC RECORDS / 03</p><h2>有出处，也有边界。</h2><Link href="/sources">全部公开来源 →</Link></div><p className="section-intro">项目团队、机构介绍和组织原文，记录不同范围的事实。</p><SourceLinks ids={['team','base','agoray']}/></section><section className="home-section"><div className="section-heading"><p className="eyebrow">QUESTIONS / 04</p><h2>你可能想先了解。</h2><Link href="/faq">全部问答 →</Link></div><div className="faq-list">{faq.slice(0,3).map(f=><details key={f.question}><summary>{f.question}</summary><p>{f.answer}</p><SourceLinks ids={f.sourceIds}/></details>)}</div></section><section className="home-section contact-section" id="contact"><p className="eyebrow">GET IN TOUCH / 05</p><h2>从一个具体问题开始。</h2><p>AI 应用、产品实践、开源社区与分享交流，欢迎联系。</p><a className="contact-email" href="mailto:2330304961@qq.com">2330304961@qq.com ↗</a><div className="text-links"><a href="https://github.com/duliangkuan">GitHub ↗</a><Link href="/speaking">公开分享 →</Link></div></section></main>;}
