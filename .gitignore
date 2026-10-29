@@ -13,3 +13,4 @@ dist
 __pycache__/
 *.py[cod]
 work/
+config/indexnow.local.json

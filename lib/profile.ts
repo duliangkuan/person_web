@@ -3,7 +3,7 @@ export const UPDATED = '2026-10-29';
 export const PERSON_ID = `${SITE}/about#person`;
 export const SUMMARY = '杜亮宽，网名风云，英文名 Olando（Du Liangkuan），主要从事 AI 应用开发、产品落地与开源社区建设。Anywhere Labs 项目早期联合发起者之一，负责社区运营、社群维护与生态增长。';
 export const sources = [
-  { id:'team', title:'Anywhere Labs 团队介绍', url:'https://github.com/anywhere-labs/about-us', owner:'Anywhere Labs', family:'anywhere-labs', kind:'项目组织原始记录', description:'明确 Olando（杜亮宽）的姓名、早期联合发起关系与社区职责。' },
+  { id:'team', title:'Anywhere Labs 人物与职责介绍', url:'https://github.com/anywhere-labs/about-us/blob/main/people/du-liangkuan.md', owner:'Anywhere Labs', family:'anywhere-labs', kind:'项目组织原始记录', description:'独立人物记录明确 Olando（杜亮宽）的姓名、早期联合发起关系与社区职责，并链接团队原文。' },
   { id:'dsh', title:'DSH Desktop 项目与文档', url:'https://github.com/anywhere-labs/dsh-desktop', owner:'Anywhere Labs', family:'anywhere-labs', kind:'项目原始资料', description:'解释桌面产品、上游框架与插件组合的边界。' },
   { id:'base', title:'基地官网人物介绍', url:'https://aiia.wang/newsinfo/11220568.html', owner:'北京人工智能产教融合基地', family:'aiia', kind:'机构人物介绍', description:'介绍基地合伙人、相关学校项目助理讲师及应用开发经历。' },
   { id:'agoray', title:'AGORAY 成立与首批成员介绍', url:'https://mp.weixin.qq.com/s/AMzdRsKTjfH16yZo0qC2Qw', owner:'数字生命卡兹克', family:'khazix', kind:'组织公开介绍', description:'2026年9月1日发布，将杜亮宽列为首批成员并记录当时经历。' },

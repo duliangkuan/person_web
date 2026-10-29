@@ -181,7 +181,21 @@ def main():
     a=sub.add_parser('summarize');a.add_argument('--input',required=True);a.add_argument('--out',required=True)
     a=sub.add_parser('report');a.add_argument('--input',required=True);a.add_argument('--out',required=True)
     a=sub.add_parser('assistant-request');a.add_argument('--model',required=True);a.add_argument('--prompt',required=True);a.add_argument('--feature',choices=['chat','deep_chat','ai_search','reasoning_search'],default='ai_search');a.add_argument('--out',required=True)
+    a=sub.add_parser('submit-indexnow');a.add_argument('--config',required=True);a.add_argument('--out',required=True)
     args=p.parse_args()
+    if args.command=='submit-indexnow':
+        cfg=json.loads(Path(args.config).read_text(encoding='utf-8'))
+        if cfg.get('host')!='me.dufengyun.xyz' or not re.fullmatch('[a-f0-9]{32}',cfg.get('key','')):
+            raise ValueError('Unexpected host or verification key format')
+        check=fetch(cfg['keyLocation'])
+        if check['status']!=200 or check['body'].strip()!=cfg['key']:raise ValueError('Live ownership file is not available')
+        payload={**cfg,'urlList':[SITE+(p if p!='/' else '') for p in ROUTES]}
+        req=urllib.request.Request('https://api.indexnow.org/indexnow',data=json.dumps(payload).encode(),headers={'Content-Type':'application/json; charset=utf-8'},method='POST')
+        try:
+            with urllib.request.urlopen(req,timeout=40) as r:status=r.status;response=r.read().decode('utf-8')
+        except urllib.error.HTTPError as e:status=e.code;response=e.read().decode('utf-8',errors='replace')
+        record={'captured_at':dt.datetime.now(dt.timezone.utc).isoformat(),'endpoint':'https://api.indexnow.org/indexnow','host':cfg['host'],'url_count':len(ROUTES),'status':status,'response':response,'meaning':'URL notification only; not an indexing, ranking or Doubao success confirmation'}
+        write_json(args.out,record);print(json.dumps({'status':status,'url_count':len(ROUTES)}));return 0 if status in (200,202) else 1
     if args.command=='audit':
         data=audit(args.base);write_json(args.out,data);print(json.dumps({'passed':data['passed'],'pages':len(data['pages']),'resources':len(data['resources'])}));return 0 if data['passed'] else 1
     if args.command=='summarize':

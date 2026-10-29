@@ -8,9 +8,12 @@ python -m unittest discover -s tools/geo -v
 python tools/geo/geo.py summarize --input work/observations.jsonl --out work/summary.json
 python tools/geo/geo.py report --input work/summary.json --out work/summary.html
 python tools/geo/geo.py assistant-request --model YOUR_CONFIRMED_MODEL --prompt "杜亮宽是谁？" --feature ai_search --out work/request.json
+python tools/geo/geo.py submit-indexnow --config config/indexnow.local.json --out work/indexnow-receipt.json
 ```
 
 The last command prepares a request only. It does not run it. Confirm current official API access and model support before execution. Credentials must remain in local environment/secret storage, never the repository, public profile, screenshots or observation exports.
+
+The assistant-request command prepares a request only; submit-indexnow is an explicit update notification to participating search engines after verifying the public ownership file. Keep its local configuration outside version control. Receipt HTTP 200 means received, and 202 means verification pending; neither confirms indexing or Doubao inclusion. Do not resubmit unchanged content repeatedly.
 
 An observation is a JSON object per line. Required fields are id, surface, mode, group, prompt, captured_at and transport_status (complete/blocked/error). Completed observations require the unmodified answer. Review is null until manually judged; otherwise it contains explicit boolean identity_correct, core_facts_sufficient and major_error. A major error always prevents success. Use account aliases, never access tokens or telephone numbers. Keep consumer product, same-source API and ordinary model API surfaces separate.
 
