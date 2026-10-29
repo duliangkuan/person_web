@@ -8,7 +8,7 @@ const COMMANDS: Record<string, { target?: string; say?: string }> = {
   help: {
     say: `[cmds] ${SHOW_COMMERCIAL_OFFERS ? 'show learning | ' : ''}show projects | show stack | show experience | show influence | show contact | whoami | clear`,
   },
-  whoami: { say: 'du.fengyun — AI Builder · deepseek-harness-desktop Co-founder & COO · 风云AI学习社发起人' },
+  whoami: { say: 'du.fengyun — AI Builder · deepseek-harness-desktop 开源社区联创 · 风云AI学习社发起人' },
   'show hero': { target: 'hero' },
   ...(SHOW_COMMERCIAL_OFFERS
     ? {

@@ -58,7 +58,7 @@ export default function TopHUD() {
             <span className="tracking-[0.35em] text-bone group-hover:glow-retina">DU.VIBE.SPACE</span>
           </button>
           <span className="text-bone/30">::</span>
-          <span className="text-electro/80 tracking-[0.3em]">AI_BUILDER · COO</span>
+          <span className="text-electro/80 tracking-[0.3em]">AI_BUILDER · COMMUNITY</span>
           <span className="flex-1 h-px bg-gradient-to-r from-retina/40 via-electro/30 to-transparent" />
           <span className="hidden md:inline text-bone/40">UTC {ts}</span>
         </div>

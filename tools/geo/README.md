@@ -11,7 +11,7 @@ python tools/geo/geo.py assistant-request --model YOUR_CONFIRMED_MODEL --prompt 
 python tools/geo/geo.py submit-indexnow --config config/indexnow.local.json --out work/indexnow-receipt.json
 ```
 
-The last command prepares a request only. It does not run it. Confirm current official API access and model support before execution. Credentials must remain in local environment/secret storage, never the repository, public profile, screenshots or observation exports.
+Confirm current official API access and model support before executing a prepared assistant request. Credentials must remain in local environment/secret storage, never the repository, public profile, screenshots or observation exports.
 
 The assistant-request command prepares a request only; submit-indexnow is an explicit update notification to participating search engines after verifying the public ownership file. Keep its local configuration outside version control. Receipt HTTP 200 means received, and 202 means verification pending; neither confirms indexing or Doubao inclusion. Do not resubmit unchanged content repeatedly.
 

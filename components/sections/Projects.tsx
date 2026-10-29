@@ -36,7 +36,7 @@ export default function Projects() {
               </h3>
               <p className="mt-5 max-w-3xl font-mono text-[13px] md:text-sm leading-relaxed text-bone/75">
                 为 DeepSeek Harness 插件生态打造的现代化桌面端解决方案。万物皆插件，桌面本身也是插件。
-                三位联合创始人共同发起，我担任 <span className="text-retina">Co-founder & COO</span>，
+                三位联合创始人共同发起，我担任 <span className="text-retina">开源社区联创</span>，
                 负责品牌传播、对外推广、社区建设与运营。
               </p>
 

@@ -13,7 +13,7 @@ const IDENT_LINES: CRTLine[] = [
   { key: 'STATUS',          value: 'Lvl 20 / STDU_NODE / NEURAL_NETWORK_BUILDER',  tint: 'bone' },
   { key: 'BASE_NODE',       value: 'BEIJING_GRID',                                 tint: 'retina', badge: 'ONLINE & SYNCED', badgeTint: 'electro' },
   { key: 'CURRENT_TASK',    value: 'DEEPSEEK_HARNESS_DESKTOP / FENGYUN_AI_CLUB',    tint: 'retina' },
-  { key: 'FOUNDER_NODE',    value: 'CO-FOUNDER & COO / LEARNING_CLUB_FOUNDER',       tint: 'electro' },
+  { key: 'FOUNDER_NODE',    value: 'OPEN-SOURCE COMMUNITY CO-INITIATOR / LEARNING_CLUB_FOUNDER',       tint: 'electro' },
   { key: 'AGENTS_DEPLOYED', value: 'AI_DAILY · EVENT_RADAR · HARNESS',              tint: 'retina' },
   { key: 'WEAPONRY',        value: 'Cursor · ClaudeCode · Vibe_Coding',            tint: 'electro' },
   { key: 'OPEN_CHANNEL',    value: 'AI_PRODUCT × AGENT_DEV · INTERN / BJ',         tint: 'electro', badge: 'IMMEDIATE_DEPLOY', badgeTint: 'retina' },
@@ -108,7 +108,7 @@ export default function Hero() {
           >
             {[
               'OpenClaw_Contributor',
-              'Co-founder_&_COO',
+              'Community_Co-initiator',
               'Fengyun_AI_Club',
               'AGORAY_Member',
               'LLM-as-Judge',

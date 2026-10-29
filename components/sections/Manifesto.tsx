@@ -6,7 +6,7 @@ import SectionHeading from '../SectionHeading';
 
 const CONTACT = {
   Name: '杜亮宽 (Du Fengyun)',
-  Role: 'AI Builder · Co-founder & COO · 风云AI学习社发起人',
+  Role: 'AI Builder · 开源社区联创 · 风云AI学习社发起人',
   Phone: '15614325230',
   Email: '2330304961@qq.com',
 };
