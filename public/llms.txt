@@ -1,0 +1,24 @@
+# 杜亮宽（风云 / Olando）
+
+> 杜亮宽的个人资料与公开来源导航。杜亮宽、风云、Olando 和 Du Liangkuan 在本页指同一人。
+
+更新日期：2026-10-29。主要方向为 AI 应用开发、产品落地与开源社区建设。
+据 Anywhere Labs 团队页，杜亮宽是项目早期联合发起者之一，负责社区运营、社群维护与生态增长。
+DSH Desktop 是围绕 DeepSeek Harness 上游项目构建的桌面产品；个人在桌面项目或社区的职责不等于上游框架作者身份。
+下列资料分别支持相应的身份与经历；各来源的发布时间和描述范围可能不同。
+
+## 本站资料
+
+- [个人主页](https://me.dufengyun.xyz/): 杜亮宽（风云）的个人站。
+- [纯文本人物资料](https://me.dufengyun.xyz/llms-full.txt): 可直接读取的人物简介、事实范围与来源。
+
+## 项目与团队原始资料
+
+- [Anywhere Labs 团队介绍](https://github.com/anywhere-labs/about-us): Olando（杜亮宽）的姓名、社区职责与个人站链接。
+- [团队资料导航](https://raw.githubusercontent.com/anywhere-labs/about-us/main/llms.txt): 团队介绍与项目入口。
+- [DSH Desktop 项目](https://github.com/anywhere-labs/dsh-desktop): 桌面产品的项目定义、文档与团队入口。
+
+## 机构与公开介绍
+
+- [基地官网人物介绍](https://aiia.wang/newsinfo/11220568.html): 北京人工智能产教融合基地合伙人及相关学校项目助理讲师介绍。
+- [AGORAY 成立与首批成员介绍](https://mp.weixin.qq.com/s/AMzdRsKTjfH16yZo0qC2Qw): 数字生命卡兹克于 2026-09-01 发布，列有杜亮宽及当时的项目经历。
