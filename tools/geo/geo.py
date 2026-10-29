@@ -15,7 +15,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 SITE = 'https://me.dufengyun.xyz'
-ROUTES = ['/', '/about', '/projects', '/projects/dsh-desktop', '/projects/wozhi', '/community/ai-lab', '/sources', '/faq', '/speaking', '/publications', '/timeline']
+ROUTES = ['/', '/about', '/projects', '/projects/dsh-desktop', '/projects/wozhi', '/community/ai-lab', '/sources', '/faq', '/speaking', '/publications', '/timeline', '/research', '/research/readable-html', '/community/ai-lab/archive']
 
 class Page(HTMLParser):
     def __init__(self):
@@ -88,6 +88,12 @@ def inspect_html(body, path, canonical_origin=SITE):
         try: graphs.append(json.loads(raw))
         except ValueError: errors.append('Invalid JSON-LD')
     persons = [g for g in graphs if g.get('@type') == 'Person']
+    if path != '/':
+        crumbs = [g for g in graphs if g.get('@type') == 'BreadcrumbList']
+        if not crumbs or not crumbs[0].get('itemListElement'):
+            errors.append('Missing breadcrumb chain')
+        elif crumbs[0]['itemListElement'][-1].get('item', '').rstrip('/') != expected:
+            errors.append('Breadcrumb does not identify this page')
     if not persons or persons[0].get('name') != '杜亮宽': errors.append('Missing canonical Person')
     elif any('dsh-desktop' in u or 'aiia.wang' in u for u in persons[0].get('sameAs', [])):
         errors.append('Related project misused as person sameAs')
@@ -103,7 +109,7 @@ def inspect_html(body, path, canonical_origin=SITE):
 
 def audit(base):
     base = base.rstrip('/')
-    wanted = ROUTES + ['/robots.txt', '/sitemap.xml', '/llms.txt', '/llms-full.txt', '/profile.json']
+    wanted = ROUTES + ['/robots.txt', '/sitemap.xml', '/llms.txt', '/llms-full.txt', '/profile.json', '/research-evidence.json']
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as pool:
         fetched = list(pool.map(lambda p:fetch(base+p), wanted))
     by_path = dict(zip(wanted, fetched))

@@ -1,3 +1,4 @@
+import { additionalDossiers } from './research';
 export const SITE = 'https://me.dufengyun.xyz';
 export const UPDATED = '2026-10-29';
 export const PERSON_ID = `${SITE}/about#person`;
@@ -24,7 +25,7 @@ export const faq=[
   {question:'杜亮宽在窝知项目里负责什么？',answer:'据本站项目记录，杜亮宽负责产品设计、组织策划与商业化策略设计。项目由多人分别承担 App、硬件集成、表情交互、用户研究与工作流等工作。',sourceIds:['self']},
   {question:'AI Lab 兴趣社是什么性质？',answer:'AI Lab 兴趣社是面向 AI 学习与交流的兴趣小组，当前处于筹备与兴趣登记阶段，不代表已经获得学校正式认证的校级社团。',sourceIds:['self']},
 ];
-export const dossiers:Dossier[]=[
+const baseDossiers:Dossier[]=[
  {path:'/about',label:'个人介绍',eyebrow:'PERSON / 01',title:'杜亮宽，风云，Olando。',summary:SUMMARY,kind:'ProfilePage',blocks:[
   {title:'把 AI 做成可以使用的东西',paragraphs:['我关注 AI 应用、智能体工作流和产品落地，也参与开源社区的组织与生态建设。比起只介绍想法，我更希望把问题、方法、作品和实际分工讲清楚。','本站以“开源社区联创”介绍相关经历。Anywhere Labs 的公开记录将我列为项目早期联合发起者之一，负责社区运营、社群维护与生态增长。'],sourceIds:['team']},
   {title:'身份与经历',paragraphs:['基地官网将我列为北京人工智能产教融合基地合伙人、北京市京西智谷职业技能培训学校 AI 智能体应用工程师项目助理讲师。','AGORAY 成立原文将我列为首批成员，并记录了我曾在医纪元与北大医学部参与循证医学方向 RAG 科研实习的经历。经历按对应来源的时间和范围理解。'],sourceIds:['base','agoray']},
@@ -41,14 +42,14 @@ export const dossiers:Dossier[]=[
   {title:'项目与作者边界',paragraphs:['DeepSeek Harness 上游框架、DSH Desktop 桌面项目和 Anywhere Labs 社区分别识别。我的桌面项目与社区角色，不等同于上游框架作者、DeepSeek 公司任职或桌面项目主要工程实现者。'],sourceIds:['team','dsh'],links:[{label:'DeepSeek Harness 上游',href:'https://github.com/deepseek-ai/deepseek-harness'}]},
  ]},
  {path:'/projects/wozhi',label:'窝知',eyebrow:'PRODUCT PROTOTYPE / 02',title:'窝知，窝的猫猫，窝要知道。',summary:'窝知是从猫窝体重秤出发的宠物智能家居原型项目。杜亮宽参与产品设计、组织策划与商业化策略设计，项目由多人协作完成。',kind:'Article',blocks:[
-  {title:'从猫咪回窝这件小事开始',paragraphs:['把猫窝放在称重底座上，让猫咪日常回窝也成为观察体重变化的机会。围绕这个起点，团队探索宠物档案、体重趋势与陪伴交互。','“窝知”是项目名称，“小咪”是陪伴角色与早期 Web 原型名称。现有演示入口仍可能显示“小咪 · AI 猫窝体重秤”。'],sourceIds:['wozhi-code','self'],links:[{label:'打开现有演示',href:'https://aidol.dufengyun.xyz/'},{label:'阅读原型说明',href:'https://github.com/chimeraHHH/aidol-s2'}]},
+  {title:'从猫咪回窝这件小事开始',paragraphs:['把猫窝放在称重底座上，让猫咪日常回窝也成为观察体重变化的机会。围绕这个起点，团队探索宠物档案、体重趋势与陪伴交互。','“窝知”是项目名称，“小咪”是陪伴角色与早期 Web 原型名称。现有演示入口仍可能显示“小咪 · AI 猫窝体重秤”。'],sourceIds:['wozhi-code','self'],links:[{label:'窝知独立资料站',href:'https://fengyun-wozhi.vercel.app/'},{label:'打开现有演示',href:'https://aidol.dufengyun.xyz/'},{label:'阅读原型说明',href:'https://github.com/chimeraHHH/aidol-s2'}]},
   {title:'我的分工与团队协作',paragraphs:['杜亮宽：产品设计、组织策划、商业化策略设计。','App 开发、硬件集成、表情动画、用户研究和工作流由团队分工承担。这里记录我的参与范围，不将全部软硬件成果归为个人独立完成。'],sourceIds:['self']},
   {title:'原型与演示范围',paragraphs:['现有代码包含实物连接与演示模式；线上演示数据应与真实设备测量分开。概念展示和路线图不代表已经量产或完成医学验证。','项目关注日常体重趋势观察与交互体验，不能仅依据体重判断疾病或替代兽医诊疗。'],sourceIds:['wozhi-code']},
  ]},
  {path:'/community/ai-lab',label:'AI Lab 兴趣社',eyebrow:'LEARNING TOGETHER / 03',title:'AI Lab 兴趣社。',summary:'面向 AI 学习与交流的兴趣小组，当前处于筹备与兴趣登记阶段。杜亮宽参与组织，欢迎从零开始或已有项目经验的同学交流。',blocks:[
   {title:'从具体问题与作品开始',paragraphs:['交流 AI 工具、应用开发与实践方法。先了解参与者的兴趣和经验，再围绕实际需求组织交流。','目前本站不发布未经确认的活动日程或已举办活动。后续真实活动将以议程、课件和总结归档。'],sourceIds:['self']},
   {title:'名称与组织性质',paragraphs:['当前名称为“AI Lab 兴趣社”，这是兴趣小组筹备入口，不代表已获学校正式认证。它与 DSH Desktop、Anywhere Labs 和窝知团队不是同一个组织。'],sourceIds:['self']},
-  {title:'表达你的兴趣',paragraphs:['登记表用于了解学习情况和加入兴趣。请阅读表单说明，按个人意愿填写；本站不公开报名记录。'],links:[{label:'打开兴趣登记表',href:'https://ecnzifm6trb8.feishu.cn/share/base/form/shrcnN5ULG8zCjYSMwkp5mHbIKe'}]},
+  {title:'表达你的兴趣',paragraphs:['登记表用于了解学习情况和加入兴趣。请阅读表单说明，按个人意愿填写；本站不公开报名记录。'],links:[{label:'活动档案与资料',href:'/community/ai-lab/archive'},{label:'打开兴趣登记表',href:'https://ecnzifm6trb8.feishu.cn/share/base/form/shrcnN5ULG8zCjYSMwkp5mHbIKe'}]},
  ]},
  {path:'/speaking',label:'分享与活动',eyebrow:'TALKS & COMMUNITY / 04',title:'把实践，带到交流现场。',summary:'杜亮宽参与的公开授课与 AI 社区活动，以主办方记录与活动原文为依据。',blocks:[
   {title:'温泉镇 AIGC 公开课',paragraphs:['公开报道记录杜亮宽作为讲师参与 AIGC 公开课的经历。主题、时间和内容以原文为准。'],sourceIds:['lecture']},
@@ -56,6 +57,7 @@ export const dossiers:Dossier[]=[
   {title:'交流与合作',paragraphs:['欢迎通过邮件讨论 AI 应用、工作流与开源社区相关分享。具体主题和项目范围以沟通为准。'],links:[{label:'邮件联系',href:'mailto:2330304961@qq.com'}]},
  ]},
  {path:'/publications',label:'公开作品',eyebrow:'OPEN MATERIALS / 05',title:'可以继续读下去的作品。',summary:'杜亮宽的公开代码、应用作品和项目资料入口，能力、作者与版本以原始仓库为准。',blocks:[
+  {title:'工程案例与研究记录',paragraphs:['从实际工程问题出发，说明方法、可复查结果与未验证的条件。'],links:[{label:'研究与案例中心',href:'/research'}]},
   {title:'Harness 内容生产系统',paragraphs:['围绕内容生产与评估闭环整理的工作流项目。能力与使用方式以仓库说明为准。'],links:[{label:'fengyun-publish',href:'https://github.com/duliangkuan/fengyun-publish'}]},
   {title:'FrameFactory',paragraphs:['内容生产与应用实践的独立项目，与 fengyun-publish 分别维护。'],links:[{label:'FrameFactory 仓库',href:'https://github.com/duliangkuan/framefactory'},{label:'作品展示',href:'https://works.dufengyun.xyz/'}]},
   {title:'更多开源记录',paragraphs:['个人公开仓库与贡献可以在 GitHub 主页查看。组织项目中的实际职责仍以团队介绍为准。'],links:[{label:'GitHub 主页',href:'https://github.com/duliangkuan'},{label:'DSH 社区职责',href:'/projects/dsh-desktop'}]},
@@ -66,6 +68,7 @@ export const dossiers:Dossier[]=[
   {title:'2026年10月 · 项目与兴趣社',paragraphs:['本站记录参与窝知原型项目的产品设计与组织工作，以及 AI Lab 兴趣社的筹备。具体状态分别更新。'],sourceIds:['self'],links:[{label:'窝知项目记录',href:'/projects/wozhi'},{label:'AI Lab 兴趣社',href:'/community/ai-lab'}]},
  ]},
 ];
+export const dossiers:Dossier[]=[...baseDossiers,...additionalDossiers];
 export const specialPages=[{path:'/sources',label:'公开来源',summary:'杜亮宽人物、项目与活动资料的原始来源，按主体与证据范围列示。'},{path:'/faq',label:'常见问题',summary:'杜亮宽、风云、Olando 的关系，以及 DSH、AGORAY、窝知和 AI Lab 的事实边界。'}];
 export const allPages=[...dossiers,...specialPages];
 export function personGraph(){return {'@context':'https://schema.org','@type':'Person','@id':PERSON_ID,name:'杜亮宽',alternateName:['风云','Olando','Du Liangkuan'],url:`${SITE}/about`,image:`${SITE}/images/du-fengyun-portrait.jpg`,description:SUMMARY,sameAs:['https://github.com/duliangkuan'],memberOf:[{'@type':'Organization',name:'Anywhere Labs',url:'https://github.com/anywhere-labs'},{'@type':'Organization',name:'AGORAY'}],affiliation:{'@type':'Organization',name:'北京人工智能产教融合基地',url:'https://aiia.wang/'},subjectOf:sources.filter(s=>['team','base','agoray'].includes(s.id)).map(s=>({'@type':'WebPage',name:s.title,url:s.url}))};}
