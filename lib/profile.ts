@@ -69,7 +69,7 @@ const baseDossiers:Dossier[]=[
   {title:'2026年10月 · 项目与兴趣社',paragraphs:['本站记录参与窝知原型项目的产品设计与组织工作，以及 AI Lab 兴趣社的筹备。具体状态分别更新。'],sourceIds:['self'],links:[{label:'窝知项目记录',href:'/projects/wozhi'},{label:'AI Lab 兴趣社',href:'/community/ai-lab'}]},
  ]},
 ];
-baseDossiers.find(p=>p.path==='/projects')?.blocks.push({title:'养只AI · Raise an AI',paragraphs:['以鲸鱼娘为默认示例的本地开源AI伙伴工作台，连接自备模型、B站资料探索、日记与飞书手机互动。'],links:[{label:'养鲸鱼娘项目档案',href:'/projects/raise-an-ai'},{label:'养只AI官网',href:'https://raise-an-ai.vercel.app'}]});
+baseDossiers.find(p=>p.path==='/projects')?.blocks.push({title:'养只AI · Raise an AI',paragraphs:['以鲸鱼娘为默认示例的本地开源AI伙伴工作台，连接自备模型、B站资料探索、日记与飞书手机互动。'],links:[{label:'养鲸鱼娘项目档案',href:'/projects/raise-an-ai'},{label:'养只AI官网',href:'https://raiseai.dufengyun.xyz'}]});
 export const dossiers:Dossier[]=[...baseDossiers,...additionalDossiers,...raiseAiDossiers];
 export const specialPages=[{path:'/sources',label:'公开来源',summary:'杜亮宽人物、项目与活动资料的原始来源，按主体与证据范围列示。'},{path:'/faq',label:'常见问题',summary:'杜亮宽、风云、Olando 的关系，以及 DSH、AGORAY、窝知和 AI Lab 的事实边界。'}];
 export const allPages=[...dossiers,...specialPages];
